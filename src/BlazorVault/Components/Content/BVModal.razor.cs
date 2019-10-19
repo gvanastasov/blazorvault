@@ -6,6 +6,9 @@ namespace BlazorVault.Components.Content
 {
 	public class BVModalBase : BVContentComponent
 	{
+		[Parameter]
+		public bool Opened { get; set; }
+
 		protected override bool Simple => false;
 
 		[Inject]
@@ -13,12 +16,14 @@ namespace BlazorVault.Components.Content
 
 		protected ElementReference Self { get; set; }
 
-		protected override async Task OnAfterRenderAsync(bool firstRender)
+		protected override async Task OnParametersSetAsync()
 		{
-			if (firstRender)
+			if (Opened)
 			{
 				await Open();
 			}
+
+			await base.OnParametersSetAsync();
 		}
 
 		private async Task Open()
