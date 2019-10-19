@@ -19,6 +19,18 @@
     pointer-events: none;
 }
 
-.bv-toast-portal > * {
+.bv-toast-portal-tl {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.bv-toast-portal-tr {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.bv-toast-portal > div > * {
     pointer-events: auto;
 }

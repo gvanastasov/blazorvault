@@ -24,16 +24,31 @@ const utils = {
     }
 };
 
+const BOX_AXEL_POSITIONS = {
+    left: 'left',
+    right: 'right',
+    middle: 'middle',
+    top: 'top',
+    bottom: 'bottom'
+};
+
 class BVToastBus {
     constructor() {
         this.__toasts = [];
-        this.__portalElement = null;
+        this.__portalElements = {
+            wrapper: null,
+            tl: null,
+            tr: null,
+            br: null,
+            bl: null
+        };
     }
 
-    show(element) {
-        // teleport
-        utils.setParent(element, this.__portal);
-        // assign classes
+    show(element, xPos, yPos) {
+        xPos = (BOX_AXEL_POSITIONS[xPos] || BOX_AXEL_POSITIONS.right)[0];
+        yPos = (BOX_AXEL_POSITIONS[yPos] || BOX_AXEL_POSITIONS.top)[0];
+
+        utils.setParent(element, this.__portal(xPos, yPos));
         utils.addClass(element, "show");
     }
 
@@ -42,14 +57,25 @@ class BVToastBus {
     }
 
     get __portal() {
-        if (!this.__portalElement) {
-            this.__portalElement = document.createElement("div");
-            utils.addClass(this.__portalElement, "bv-toast-portal");
+        return (xPos, yPos) => {
+            const key = `${yPos}${xPos}`;
 
-            document.body.appendChild(this.__portalElement);
-        }
+            if (!this.__portalElements.wrapper) {
+                const wrapper = document.createElement("div");
+                utils.addClass(wrapper, "bv-toast-portal");
+                document.body.appendChild(wrapper);
+                this.__portalElements.wrapper = wrapper;
+            }
 
-        return this.__portalElement;
+            if (!this.__portalElements[key]) {
+                const portal = document.createElement("div");
+                utils.addClass(portal, `bv-toast-portal-${key}`);
+                this.__portalElements.wrapper.appendChild(portal);
+                this.__portalElements[key] = portal;
+            }
+
+            return this.__portalElements[key];
+        };
     }
 }
 
