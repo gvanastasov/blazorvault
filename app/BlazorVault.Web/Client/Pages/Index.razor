@@ -27,9 +27,25 @@
 </BVCarousel>
 
 <BVHeading class="mt-5 mb-3">Spinner</BVHeading>
-
 <BVSpinner Style="Style.Danger" />
 
 <BVHeading class="mt-5 mb-3">Toasts</BVHeading>
-
 <BVToast>Heads up, toasts will stack automatically</BVToast>
+
+<BVHeading class="mt-5 mb-3">Modal</BVHeading>
+<BVButton @onclick="ShowExampleModal">Open Modal Here</BVButton>
+<BVModal Opened="ExampleModalShown">Helloo from this modal</BVModal>
+
+@code {
+    private bool ExampleModalShown { get; set; }
+
+    private void ShowExampleModal()
+    {
+        ExampleModalShown = true;
+    }
+}
+
+<BVHeading class="mt-5 mb-3">Progress</BVHeading>
+<BVProgress Value="13" />
+<BVProgress Value="50" />
+<BVProgress Value="100" />
