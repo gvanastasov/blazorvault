@@ -10,3 +10,18 @@
         <BVCardBody>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</BVCardBody>
     </BVCard>
 </BVCollapsable>
+
+<BVHeading class="mt-5 mb-3">Carousel</BVHeading>
+
+<BVCarousel Loop>
+    @foreach (var slideName in new string[] { "First", "Second", "Third" })
+    {
+        <BVCarouselSlide Active="@(slideName == "Second")">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: First slide">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777"></rect>
+                <text x="50%" y="50%" fill="#555" dy=".3em">@slideName slide</text>
+            </svg>
+        </BVCarouselSlide>
+    }
+</BVCarousel>
