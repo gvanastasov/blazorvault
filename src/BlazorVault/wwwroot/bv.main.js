@@ -84,35 +84,17 @@ class BVToastBus {
 class BVModalBus {
     constructor() {
         this.__originElement = null;
-        this.__portalElement = null;
     }
 
     open(element) {
-        const wrapper = this.__portal;
-        utils.addClass(wrapper, "bv-modal-show");
-
-        this.__originElement = element.parent;
-        utils.setParent(element, wrapper);
+        this.__originElement = element.parentElement;
+        utils.addClass(element, "bv-modal-show");
+        utils.setParent(element, document.body);
     }
 
     close(element) {
-        const wrapper = this.__portal;
+        utils.removeClass(element, 'bv-modal-show');
         utils.setParent(element, this.__originElement);
-        utils.removeClass(wrapper, 'bv-modal-show');
-    }
-
-    get __portal() {
-        let wrapper = this.__portalElement;
-
-        if (!wrapper) {
-            wrapper = document.createElement("div");
-            utils.addClass(wrapper, "modal");
-            utils.setParent(wrapper, document.body);
-
-            this.__portalElement = wrapper;
-        }
-
-        return wrapper;
     }
 }
 
