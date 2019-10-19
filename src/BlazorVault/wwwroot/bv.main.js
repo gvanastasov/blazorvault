@@ -16,8 +16,42 @@ const utils = {
             return el.classList.indexOf(className) !== -1;
         }
         return false;
+    },
+    setParent: function (el, newParent) {
+        if (el && newParent) {
+            newParent.appendChild(el);
+        }
     }
 };
+
+class BVToastBus {
+    constructor() {
+        this.__toasts = [];
+        this.__portalElement = null;
+    }
+
+    show(element) {
+        // teleport
+        utils.setParent(element, this.__portal);
+        // assign classes
+        utils.addClass(element, "show");
+    }
+
+    hide(element) {
+        utils.removeClass(element, "show");
+    }
+
+    get __portal() {
+        if (!this.__portalElement) {
+            this.__portalElement = document.createElement("div");
+            utils.addClass(this.__portalElement, "bv-toast-portal");
+
+            document.body.appendChild(this.__portalElement);
+        }
+
+        return this.__portalElement;
+    }
+}
 
 class BVToggleBus {
     constructor() {
@@ -48,5 +82,6 @@ class BVToggleBus {
 }
 
 window.bv = {
-    toggle: new BVToggleBus()
+    toggle: new BVToggleBus(),
+    toast: new BVToastBus()
 };

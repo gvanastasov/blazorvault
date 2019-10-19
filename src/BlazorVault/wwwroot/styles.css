@@ -9,3 +9,16 @@
     margin: 1em 0;
     background-image: url('background.png');
 }
+
+.bv-toast-portal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    pointer-events: none;
+}
+
+.bv-toast-portal > * {
+    pointer-events: auto;
+}
