@@ -40,9 +40,7 @@
     pointer-events: none;
 }
 
-.bv-modal-show:before {
-    content: '';
-    display: block;
+.bv-modal-show > .bv-modal-backdrop {
     position: absolute;
     top: 0;
     left: 0;
