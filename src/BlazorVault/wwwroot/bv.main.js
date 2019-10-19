@@ -63,19 +63,56 @@ class BVToastBus {
             if (!this.__portalElements.wrapper) {
                 const wrapper = document.createElement("div");
                 utils.addClass(wrapper, "bv-toast-portal");
-                document.body.appendChild(wrapper);
+                utils.setParent(wrapper, document.body);
+
                 this.__portalElements.wrapper = wrapper;
             }
 
             if (!this.__portalElements[key]) {
                 const portal = document.createElement("div");
                 utils.addClass(portal, `bv-toast-portal-${key}`);
-                this.__portalElements.wrapper.appendChild(portal);
+                utils.setParent(portal, this.__portalElements.wrapper);
+
                 this.__portalElements[key] = portal;
             }
 
             return this.__portalElements[key];
         };
+    }
+}
+
+class BVModalBus {
+    constructor() {
+        this.__originElement = null;
+        this.__portalElement = null;
+    }
+
+    open(element) {
+        const wrapper = this.__portal;
+        utils.addClass(wrapper, "bv-modal-show");
+
+        this.__originElement = element.parent;
+        utils.setParent(element, wrapper);
+    }
+
+    close(element) {
+        const wrapper = this.__portal;
+        utils.setParent(element, this.__originElement);
+        utils.removeClass(wrapper, 'bv-modal-show');
+    }
+
+    get __portal() {
+        let wrapper = this.__portalElement;
+
+        if (!wrapper) {
+            wrapper = document.createElement("div");
+            utils.addClass(wrapper, "modal");
+            utils.setParent(wrapper, document.body);
+
+            this.__portalElement = wrapper;
+        }
+
+        return wrapper;
     }
 }
 
@@ -109,5 +146,6 @@ class BVToggleBus {
 
 window.bv = {
     toggle: new BVToggleBus(),
-    toast: new BVToastBus()
+    toast: new BVToastBus(),
+    modal: new BVModalBus()
 };

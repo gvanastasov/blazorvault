@@ -34,3 +34,24 @@
 .bv-toast-portal > div > * {
     pointer-events: auto;
 }
+
+.bv-modal-show {
+    display: block;
+    pointer-events: none;
+}
+
+.bv-modal-show:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.bv-modal-show > * {
+    pointer-events: auto;
+}
