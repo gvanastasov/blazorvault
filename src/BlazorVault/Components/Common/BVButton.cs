@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using System.Threading.Tasks;
 
 namespace BlazorVault
 {
@@ -13,6 +14,8 @@ namespace BlazorVault
 	/// </summary>
 	public sealed class BVButton : BVStyleComponent
 	{
+		protected override Style? DefaultStyle => BlazorVault.Style.Primary;
+
 		protected override string DefaultTag
 		{
 			get
@@ -37,6 +40,17 @@ namespace BlazorVault
 
 		protected override bool Simple => true;
 
+		private bool IsToggle
+		{
+			get
+			{
+				return !string.IsNullOrWhiteSpace(Toggle);
+			}
+		}
+
+		// TODO: need two way binding for the state on after render
+		private bool bvTargetExpanded { get; set; }
+
 		[Inject]
 		private IJSRuntime JSRuntime { get; set; }
 
@@ -44,7 +58,7 @@ namespace BlazorVault
 			RenderTreeBuilder builder, ref int sequence)
 		{
 			base.AddAttributes(builder, ref sequence);
-			builder.AddAttribute(sequence++, Attributes.Type, Type.ToString().ToLower());
+			builder.AddAttribute(sequence++, Attributes.Type, (IsToggle ? ButtonType.Button : Type).ToString().ToLower());
 
 			if (this.DefaultTag != MarkupElements.Button)
 			{
@@ -55,7 +69,7 @@ namespace BlazorVault
 			{
 				builder.AddAttribute(sequence++, "data-toggle", "collapse");
 				builder.AddAttribute(sequence++, "data-target", $"#{this.Toggle}");
-				builder.AddAttribute(sequence++, "aria-expanded", false.ToString().ToLower());
+				builder.AddAttribute(sequence++, "aria-expanded", bvTargetExpanded.ToString().ToLower());
 				builder.AddAttribute(sequence++, "aria-controls", this.Toggle);
 				builder.AddAttribute(sequence++, "onclick", EventCallback.Factory.Create<MouseEventArgs>(this, OnClick));
 			}
@@ -63,10 +77,18 @@ namespace BlazorVault
 
 		private async void OnClick()
 		{
-			await JSRuntime.InvokeAsync<object>("exampleJsFunctions.showPrompt");
+			if (IsToggle)
+			{
+				await ToggleTarget();
+			}
+		}
 
-			this.Style = BlazorVault.Style.Dark;
+		private async Task ToggleTarget()
+		{
+			var action = bvTargetExpanded ? "hide" : "show";
+			await JSRuntime.InvokeAsync<object>($"bv.toggle.{action}", this.Toggle);
 
+			this.bvTargetExpanded = !this.bvTargetExpanded;
 			StateHasChanged();
 		}
 	}
