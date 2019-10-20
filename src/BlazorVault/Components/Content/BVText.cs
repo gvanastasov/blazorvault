@@ -4,14 +4,8 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorVault
 {
-	public class BVText : BVComponentBase
+	public class BVText : BVContentComponent
 	{
-		/// <summary>
-		/// Inner HTML.
-		/// </summary>
-		[Parameter]
-		public RenderFragment ChildContent { get; set; }
-
 		/// <summary>
 		/// Makes a paragraph stand out.
 		/// </summary>
