@@ -1,15 +1,42 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorVault.Web.Client.Domain
+@inherits LayoutComponentBase
 
-<div class="sidebar">
+<div class="sidebar @(Options.ShowSideBar ? "": "sidebar-hidden")">
     <NavMenu />
 </div>
 
 <div class="main">
     <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+        <a href="" class="ml-md-auto">Home</a>
+        <a href="counter" class="ml-1">Counter</a>
     </div>
 
     <div class="content px-4">
-        @Body
+        <CascadingValue Value="this" Name="layout">
+            @Body
+        </CascadingValue>
     </div>
 </div>
+
+@code {
+    private LayoutOptions Options { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Options = new LayoutOptions
+        {
+            ShowSideBar = true,
+        };
+    }
+
+    protected override void OnParametersSet()
+    {
+        Options.ShowSideBar = true;
+    }
+
+    internal void Update(Action<LayoutOptions> options)
+    {
+        options?.Invoke(this.Options);
+        StateHasChanged();
+    }
+}

@@ -133,3 +133,7 @@ app {
         display: block;
     }
 }
+
+.sidebar-hidden {
+    transform: translateX(-250px);
+}
