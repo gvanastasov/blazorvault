@@ -1,77 +1,60 @@
 ﻿@page "/"
-@using BlazorVault.Web.Client.Domain
 
-<BVHeading>no nav</BVHeading>
+<div style="
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="100%" height="100%" version="1.1" viewBox="0 0 200 100" class="" preserveAspectRatio="xMidYMid slice">
+        <metadata>
+            <rdf:rdf>
+                <cc:work rdf:about="">
+                    <dc:format>image/svg+xml</dc:format>
+                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+                    <dc:title></dc:title>
+                </cc:work>
+            </rdf:rdf>
+        </metadata>
+        <g transform="translate(0 -270.54)" id="vault-gates">
+            <path d="m106.93 270.54-24.592 100h75.578l7.7715-31.598v-68.402z" fill="#2f2f2f" class="vault-gate-right-0" />
+            <path d="m106.93 270.54-24.592 100h75.58l2.4512-9.9648v-90.035z" fill="#1d1d1d" class="vault-gate-right-1" />
+            <path d="m106.93 270.54-24.592 100h119.06v-100z" class="vault-gate-right-2" />
+            <path d="m28.571 270.54v100h53.77l24.592-100z" fill="#454545" class="vault-gate-left-0" />
+            <path d="m34.198 270.54v100h48.143l24.592-100z" fill="#1d1d1d" class="vault-gate-left-1" />
+            <path d="m-0.32115 270.54v100h84.662l24.592-100z" class="vault-gate-left-2" />
+        </g>
+    </svg>
+</div>
+
+<BVContainer>
+    <BVJumbotron class="text-center">
+        <BVHeading>Blazor Vault</BVHeading>
+        <BVText Lead>A complete library of reusable components.</BVText>
+    </BVJumbotron>
+</BVContainer>
 
 @code {
     [CascadingParameter(Name="layout")]
     public MainLayout Layout { get; set; }
 
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; }
+
     protected override void OnInitialized()
     {
         Layout.Update(
-            x => 
-            { 
+            x =>
+            {
                 x.ShowSideBar = false;
             });
     }
-}
 
-@*<BVHeading>Collapsable</BVHeading>
-
-<br />
-
-<BVButton Toggle="collapseExample">Click me</BVButton>
-<BVCollapsable id="collapseExample" style="width:300px">
-    <BVCard>
-        <BVCardBody>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</BVCardBody>
-    </BVCard>
-</BVCollapsable>
-
-<BVHeading class="mt-5 mb-3">Carousel</BVHeading>
-
-<BVCarousel Loop>
-    @foreach (var slideName in new string[] { "First", "Second", "Third" })
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        <BVCarouselSlide Active="@(slideName == "Second")">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: First slide">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#777"></rect>
-                <text x="50%" y="50%" fill="#555" dy=".3em">@slideName slide</text>
-            </svg>
-        </BVCarouselSlide>
-    }
-</BVCarousel>
-
-<BVHeading class="mt-5 mb-3">Spinner</BVHeading>
-<BVSpinner Style="Style.Danger" />
-
-<BVHeading class="mt-5 mb-3">Toasts</BVHeading>
-<BVToast>Heads up, toasts will stack automatically</BVToast>
-
-<BVHeading class="mt-5 mb-3">Modal</BVHeading>
-<BVButton @onclick="ShowExampleModal">Open Modal Here</BVButton>
-<BVModal Opened="ExampleModalShown">Helloo from this modal</BVModal>
-
-@code {
-    private bool ExampleModalShown { get; set; }
-
-    private void ShowExampleModal()
-    {
-        ExampleModalShown = true;
+        if (firstRender)
+        {
+            await JSRuntime.InvokeAsync<object>("Blazor.app.openGates", "vault-gates");
+        }
     }
 }
-
-<BVHeading class="mt-5 mb-3">Progress</BVHeading>
-<BVProgress Value="13" />
-<BVProgress Value="50" />
-<BVProgress Value="100" />
-
-<BVHeading class="mt-5 mb-3">Jumbotron</BVHeading>
-<BVJumbotron>
-    <BVHeading As="4" Large>Hello, world!</BVHeading>
-    <BVText Lead>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</BVText>
-    <hr class="my-4"/>
-    <BVText>It uses utility classes for typography and spacing to space content out within the larger container.</BVText>
-    <BVButton>Learn more</BVButton>
-</BVJumbotron>*@
