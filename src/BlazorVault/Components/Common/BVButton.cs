@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using System;
 using System.Threading.Tasks;
 
 namespace BlazorVault
@@ -14,13 +15,23 @@ namespace BlazorVault
 	/// </summary>
 	public sealed class BVButton : BVStyleComponent
 	{
+		[Inject]
+		NavigationManager NavigationManager { get; set; }
+
 		protected override Style? DefaultStyle => BlazorVault.Style.Primary;
 
 		protected override string DefaultTag
 		{
 			get
 			{
-				return MarkupElements.Button;
+				if (IsLink)
+				{
+					return MarkupElements.Anchor;
+				}
+
+				return !string.IsNullOrWhiteSpace(Tag)
+					? Tag
+					: MarkupElements.Button;
 			}
 		}
 
@@ -33,10 +44,16 @@ namespace BlazorVault
 		}
 
 		[Parameter]
-		public ButtonType Type { get; set; }
+		public ButtonType Type { get; set; } = ButtonType.Button;
 
 		[Parameter]
 		public string Toggle { get; set; }
+
+		[Parameter]
+		public string Href { get; set; }
+
+		[Parameter]
+		public string Tag { get; set; }
 
 		protected override bool Simple => true;
 
@@ -45,6 +62,14 @@ namespace BlazorVault
 			get
 			{
 				return !string.IsNullOrWhiteSpace(Toggle);
+			}
+		}
+
+		private bool IsLink
+		{
+			get
+			{
+				return !string.IsNullOrWhiteSpace(Href);
 			}
 		}
 
@@ -58,14 +83,21 @@ namespace BlazorVault
 			RenderTreeBuilder builder, ref int sequence)
 		{
 			base.AddAttributes(builder, ref sequence);
-			builder.AddAttribute(sequence++, Attributes.Type, (IsToggle ? ButtonType.Button : Type).ToString().ToLower());
 
-			if (this.DefaultTag != MarkupElements.Button)
+			if (IsLink)
 			{
-				builder.AddAttribute(sequence++, Attributes.Role, MarkupElements.Button);
+				builder.AddAttribute(sequence++, "href", this.Href);
+			}
+			else
+			{
+				builder.AddAttribute(sequence++, Attributes.Type, (IsToggle ? ButtonType.Button : Type).ToString().ToLower());
+				if (this.Tag != MarkupElements.Button)
+				{
+					builder.AddAttribute(sequence++, Attributes.Role, MarkupElements.Button);
+				}
 			}
 
-			if (!string.IsNullOrWhiteSpace(Toggle))
+			if (IsToggle)
 			{
 				builder.AddAttribute(sequence++, "data-toggle", "collapse");
 				builder.AddAttribute(sequence++, "data-target", $"#{this.Toggle}");
@@ -75,11 +107,20 @@ namespace BlazorVault
 			}
 		}
 
+		protected override void RenderInnerHtml(RenderTreeBuilder builder, ref int sequence)
+		{
+			base.RenderInnerHtml(builder, ref sequence);
+		}
+
 		private async void OnClick()
 		{
 			if (IsToggle)
 			{
 				await ToggleTarget();
+			}
+			else if (IsLink)
+			{
+				NavigationManager.NavigateTo(this.Href);
 			}
 		}
 

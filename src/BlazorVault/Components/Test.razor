@@ -1,12 +1,13 @@
 ﻿@inject IJSRuntime JsRuntime;
+@inject NavigationManager NavigationManager;
 
 <h1>Call JavaScript Function Example</h1>
 
-<button type="button" class="btn btn-primary" @onclick="ConvertArray">
+<button type="button" class="btn btn-primary" @onclick="OnClick">
     Convert Array
 </button>
 
-<p class="mt-2" style="font-size:1.6em">
+<p @ref="username" class="mt-2" style="font-size:1.6em">
     <span class="badge badge-success">
         @ConvertedText
     </span>
@@ -19,6 +20,8 @@
 
     private MarkupString ConvertedText =
         new MarkupString("Select the <b>Convert Array</b> button.");
+
+    ElementReference username;
 
     private uint[] QuoteArray = new uint[]
         {
@@ -36,4 +39,10 @@
 
         StateHasChanged();
     }
+
+    private async void OnClick()
+	{
+		Console.WriteLine($"Navigate to");
+		NavigationManager.NavigateTo("components");
+	}
 }
