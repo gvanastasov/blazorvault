@@ -14,5 +14,9 @@
         left: -#{$sidebar-width};
         pointer-events: none;
         position: absolute;
+
+        & + #content {
+            left: 0px;
+        }
     }
 }

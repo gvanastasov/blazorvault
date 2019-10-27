@@ -12,6 +12,8 @@
     left: -250px;
     pointer-events: none;
     position: absolute; }
+    #sidebar.collapsed + #content {
+      left: 0px; }
 
 #content {
   flex-grow: 1;
