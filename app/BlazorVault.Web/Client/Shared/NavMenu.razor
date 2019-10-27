@@ -1,37 +1,48 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">BlazorVault.Web</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+﻿<div class="sidebar-header">
+    <h3>Bootstrap Sidebar</h3>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </li>
-    </ul>
-</div>
+<ul class="list-unstyled components">
+    <p>Dummy Heading</p>
+    <li class="active">
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li>
+                <a href="#">Home 1</a>
+            </li>
+            <li>
+                <a href="#">Home 2</a>
+            </li>
+            <li>
+                <a href="#">Home 3</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">About</a>
+    </li>
+    <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+                <a href="#">Page 1</a>
+            </li>
+            <li>
+                <a href="#">Page 2</a>
+            </li>
+            <li>
+                <a href="#">Page 3</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">Portfolio</a>
+    </li>
+    <li>
+        <a href="#">Contact</a>
+    </li>
+</ul>
 
 @code {
-    bool collapseNavMenu = true;
 
-    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
 }

@@ -14,17 +14,11 @@
     </svg>
 </div>
 
-<div class="sidebar @(Options.ShowSideBar ? "": "sidebar-hidden")">
-    <NavMenu />
-</div>
-
-<div class="main @(Options.ShowSideBar ? "": "main-only")">
-    <div class="top-row px-4">
-        <a href="" class="ml-md-auto">Home</a>
-        <a href="counter" class="ml-1">Counter</a>
-    </div>
-
-    <div class="content px-4">
+<div class="wrapper">
+    <nav id="sidebar" class="@(Options.ShowSideBar ? string.Empty : "collapsed")">
+        <NavMenu />
+    </nav>
+    <div id="content">
         <CascadingValue Value="this" Name="layout">
             @Body
         </CascadingValue>
