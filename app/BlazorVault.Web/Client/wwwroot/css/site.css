@@ -7,6 +7,7 @@
   max-width: 250px;
   transition: left 0.3s ease-in-out;
   background: #990011FF;
+  color: #fcf6f5ff;
   z-index: 990; }
   #sidebar.collapsed {
     left: -250px;
@@ -18,7 +19,8 @@
 #content {
   flex-grow: 1;
   position: relative;
-  left: 250px; }
+  left: 250px;
+  background-color: #fcf6f5ff; }
 
 /**
  * Layout
