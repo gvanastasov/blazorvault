@@ -17,5 +17,8 @@
     <ProjectReference Include="..\Shared\BlazorVault.Web.Shared.csproj" />
     <ProjectReference Include="..\..\..\src\BlazorVault\BlazorVault.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
 
 </Project>
