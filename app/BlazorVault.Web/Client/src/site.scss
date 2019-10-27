@@ -4,21 +4,8 @@
 @import './abstracts/functions';
 @import './abstracts//mixins';
 
-@import './layout/navigation';
+@import './layout/layout';
 @import './layout/sidebar';
-@import './layout/content';
-
-/**
- * Layout
- *
- */
-main {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    min-height: 100vh;
-}
-
 
 #vault {
     position: absolute;

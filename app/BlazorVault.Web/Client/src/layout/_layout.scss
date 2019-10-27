@@ -1,0 +1,53 @@
+#app {
+    position: relative;
+    left: $sidebar-width;
+    top: $topbar-height;
+    width: calc(100% - #{$sidebar-width});
+    min-height: calc(100vh - #{$topbar-height});
+    background-color: $color-white;
+
+    & > nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        min-width: $sidebar-width;
+        max-width: $sidebar-width;
+        transition: left 0.3s ease-in-out;
+        background: $color-primary;
+        color: $color-white;
+        overflow-x: hidden;
+        text-align: center;
+    
+        @include z-index(sidebar);
+    
+        &.collapsed {
+            left: -#{$sidebar-width};
+            pointer-events: none;
+            position: absolute;
+    
+            & + #content {
+                left: 0px;
+            }
+        }
+    }
+
+    & > header {
+        height: $topbar-height;
+        padding: 30px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.18);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+        position: fixed;
+        top: 0;
+        width: calc(100% - 250px);
+        background: $color-white;
+
+        @include z-index(header);
+    }
+    
+    & > main {
+        position: relative;
+        padding-left: 30px;
+        padding-top: 30px;
+    }
+}
