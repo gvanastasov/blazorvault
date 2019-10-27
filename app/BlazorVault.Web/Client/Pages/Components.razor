@@ -2,3 +2,16 @@
 
 <h3>Components</h3>
 
+@code {
+    [CascadingParameter(Name = "layout")]
+    public MainLayout Layout { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Layout.Update(
+            x =>
+            {
+                x.GatesHidden = true;
+            });
+    }
+}

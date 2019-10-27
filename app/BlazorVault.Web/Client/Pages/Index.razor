@@ -13,9 +13,6 @@
     [CascadingParameter(Name="layout")]
     public MainLayout Layout { get; set; }
 
-    [Inject]
-    private IJSRuntime JSRuntime { get; set; }
-
     protected override void OnInitialized()
     {
         Layout.Update(
@@ -23,13 +20,5 @@
             {
                 x.ShowSideBar = false;
             });
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await JSRuntime.InvokeAsync<object>("Blazor.app.openGates", "vault-gates");
-        }
     }
 }
