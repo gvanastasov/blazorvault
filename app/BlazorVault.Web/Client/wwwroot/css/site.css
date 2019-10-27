@@ -6,12 +6,17 @@
   height: 100vh;
   min-width: 250px;
   max-width: 250px;
-  transition: margin-left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
   background: #990011FF; }
   #sidebar.collapsed {
-    margin-left: -250px;
+    left: -250px;
     pointer-events: none;
     position: absolute; }
+
+#content {
+  flex-grow: 1;
+  position: relative;
+  left: 250px; }
 
 /**
  * Layout
@@ -22,9 +27,6 @@
   align-items: stretch;
   width: 100%;
   min-height: 100vh; }
-
-#content {
-  flex-grow: 1; }
 
 #vault {
   position: absolute;

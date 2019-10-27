@@ -4,13 +4,13 @@
     top: 0;
     left: 0;
     height: 100vh;
-    min-width: 250px;
-    max-width: 250px;
-    transition: margin-left 0.3s ease-in-out;
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
+    transition: left 0.3s ease-in-out;
     background: $color-primary;
     
     &.collapsed {
-        margin-left: -250px;
+        left: -#{$sidebar-width};
         pointer-events: none;
         position: absolute;
     }
