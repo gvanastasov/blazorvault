@@ -5,7 +5,7 @@
     <nav class="@(Options.ShowSideBar ? string.Empty : "collapsed")">
         <NavMenu />
     </nav>
-    <header>Header</header>
+    <header>@Options.Title</header>
     <main>
         <CascadingValue Value="this" Name="layout">
             @Body
@@ -44,7 +44,7 @@
 
         if (this.Options.IsDirty)
         {
-            StateHasChanged();
+            this.StateHasChanged();
             this.Options.IsDirty = false;
         }
     }
@@ -52,6 +52,6 @@
     private void ResetOptions()
     {
         this.Options.ShowSideBar = true;
-        this.Options.GatesHidden = false;
+        this.Options.GatesHidden = true;
     }
 }

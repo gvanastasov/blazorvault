@@ -1,4 +1,5 @@
 .sidebar {
+    // .sidebar-header
     &-header {
         margin-bottom: 30px;
         padding: 30px;
@@ -6,6 +7,7 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.5);
         position: relative;
         height: $topbar-height;
+        background: $color-primary;
 
         & > a {
             position: absolute;
@@ -13,6 +15,40 @@
             left: 0px;
             height: 100%;
             width: 100%;
+        }
+    }
+
+    // .sidebar-links
+    &-links {
+        & > ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+
+            & > li {
+
+                & > a {
+                    color: white;
+                    padding: 10px 30px 10px 10px;
+                    display: block;
+                    border-left: 0px solid $color-light;
+                    transition: border-left-width 0.3s;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &:hover:not(.active) {
+                        border-left-width: 10px;
+                    }
+
+                    &.active {
+                        font-weight: bold;
+                        background-color: $color-light;
+                    }
+                }
+            }
         }
     }
 }

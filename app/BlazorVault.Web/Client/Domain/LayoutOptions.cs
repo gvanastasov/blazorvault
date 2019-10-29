@@ -1,34 +1,47 @@
-﻿using System;
-
-namespace BlazorVault.Web.Client.Domain
+﻿namespace BlazorVault.Web.Client.Domain
 {
 	internal sealed class LayoutOptions
 	{
-		private bool showSideBar;
+		private bool _showSideBar;
 		internal bool ShowSideBar
 		{
 			get
 			{
-				return showSideBar;
+				return _showSideBar;
 			}
 			set
 			{
 				IsDirty = true;
-				showSideBar = value;
+				_showSideBar = value;
 			}
 		}
 
-		private bool gatesHidden;
+		private bool _gatesHidden;
+
 		internal bool GatesHidden
 		{
 			get
 			{
-				return gatesHidden;
+				return _gatesHidden;
 			}
 			set
 			{
 				IsDirty = true;
-				gatesHidden = value;
+				_gatesHidden = value;
+			}
+		}
+
+		private string _title;
+		public string Title
+		{
+			get
+			{
+				return _title;
+			}
+			set
+			{
+				IsDirty = true;
+				_title = value;
 			}
 		}
 

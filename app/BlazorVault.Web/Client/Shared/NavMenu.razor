@@ -1,49 +1,56 @@
-﻿<div class="sidebar-header">
+﻿@inject NavigationManager NavigationManager;
+
+<div class="sidebar-header">
     <h3 class="sr-only">Blazor Vault</h3>
-    <img src="images/blazor-vault-logo.png" alt="blazor vault logo"/>
+    <img src="images/blazor-vault-logo.png" alt="blazor vault logo" />
     <BVLink To="@Routes.Home"><span class="sr-only">Home</span></BVLink>
 </div>
 
-<ul class="list-unstyled components">
-    <li class="active">
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-        <ul class="collapse list-unstyled" id="homeSubmenu">
+<section class="sidebar-links">
+    <BVHeading Level="3" As="4" class="mb-3">Components</BVHeading>
+    <ol class="list-unstyled">
+        @foreach (var item in links)
+        {
             <li>
-                <a href="#">Home 1</a>
+                <BVLink To="@item.Key">@item.Value</BVLink>
             </li>
-            <li>
-                <a href="#">Home 2</a>
-            </li>
-            <li>
-                <a href="#">Home 3</a>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <a href="#">About</a>
-    </li>
-    <li>
-        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li>
-                <a href="#">Page 1</a>
-            </li>
-            <li>
-                <a href="#">Page 2</a>
-            </li>
-            <li>
-                <a href="#">Page 3</a>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <a href="#">Portfolio</a>
-    </li>
-    <li>
-        <a href="#">Contact</a>
-    </li>
-</ul>
+        }
+    </ol>
+</section>
+
 
 @code {
+    protected SortedDictionary<string, string> links = new SortedDictionary<string, string>
+    {
+        { "components/alert", "Alert" },
+        { "components/badge", "Badge" },
+        { "components/button", "Button" },
+        { "components/button-group", "Button Group" },
+        { "components/link", "Link" },
+        { "components/spinner", "Spinner" },
+        { "components/card", "Card" },
+        { "components/carousel", "Carousel" },
+        { "components/code", "Code" },
+        { "components/group", "Group" },
+        { "components/heading", "Heading" },
+        { "components/icon", "Icon" },
+        { "components/jumbotron", "Jumbotron" },
+        { "components/modal", "Modal" },
+        { "components/progress-bar", "Progress Bar" },
+        { "components/text", "Text" },
+        { "components/toast", "Toast" },
+        { "components/grid", "Grid" },
+        { "components/collapsable", "Collapsable" },
+        { "components/container", "Container" },
+        { "components/breadcrumbs", "Breadcrumbs" },
+        { "components/dynamic", "Dynamic" },
+    };
 
+    protected string CurrentRoute
+    {
+        get
+        {
+            return NavigationManager.Uri.ToString();
+        }
+    }
 }

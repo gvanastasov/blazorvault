@@ -14,10 +14,10 @@
         min-width: $sidebar-width;
         max-width: $sidebar-width;
         transition: left 0.3s ease-in-out;
-        background: $color-primary;
         color: $color-white;
         overflow-x: hidden;
         text-align: center;
+        background: linear-gradient(180deg, $color-primary 0%, $color-dark 100%);
     
         @include z-index(sidebar);
     
