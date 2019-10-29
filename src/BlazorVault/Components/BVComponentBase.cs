@@ -56,15 +56,14 @@ namespace BlazorVault.Components
 
 		protected virtual void AddAttributes(RenderTreeBuilder builder, ref int sequence)
 		{
-			string classString = GetClassString();
-			if (string.IsNullOrWhiteSpace(classString))
-			{
-				return;
-			}
-
 			// todo: need strategy
 			builder.AddMultipleAttributes(sequence++, UnknownAttributes);
-			builder.AddAttribute(sequence++, Attributes.Class, classString);
+
+			var classString = GetClassString();
+			if (!string.IsNullOrWhiteSpace(classString))
+			{
+				builder.AddAttribute(sequence++, Attributes.Class, classString);
+			}
 
 			if (!string.IsNullOrWhiteSpace(this.Role))
 			{
