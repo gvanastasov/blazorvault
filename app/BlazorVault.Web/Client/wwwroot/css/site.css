@@ -16,7 +16,7 @@
     color: #fcf6f5ff;
     overflow-x: hidden;
     text-align: center;
-    background: linear-gradient(180deg, #990011FF 0%, #4d1312 100%);
+    background: linear-gradient(180deg, #990011FF 0%, #4a0008 100%);
     z-index: 990; }
     #app > nav.collapsed {
       left: -250px;
@@ -64,11 +64,12 @@
     padding: 10px 30px 10px 10px;
     display: block;
     border-left: 0px solid #dc3545;
-    transition: border-left-width 0.3s; }
+    transition: border-left-width 0.3s,  background-color 0.2s, font-weight 0.2s; }
     .sidebar-links > ol > li > a:hover {
       text-decoration: none; }
     .sidebar-links > ol > li > a:hover:not(.active) {
-      border-left-width: 10px; }
+      border-left-width: 10px;
+      background-color: #4a0008; }
     .sidebar-links > ol > li > a.active {
       font-weight: bold;
       background-color: #dc3545; }

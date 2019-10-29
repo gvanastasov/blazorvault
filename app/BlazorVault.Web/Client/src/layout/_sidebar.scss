@@ -33,7 +33,9 @@
                     padding: 10px 30px 10px 10px;
                     display: block;
                     border-left: 0px solid $color-light;
-                    transition: border-left-width 0.3s;
+                    transition: border-left-width 0.3s, 
+                        background-color 0.2s,
+                        font-weight 0.2s;
 
                     &:hover {
                         text-decoration: none;
@@ -41,6 +43,7 @@
 
                     &:hover:not(.active) {
                         border-left-width: 10px;
+                        background-color: $color-dark;
                     }
 
                     &.active {
