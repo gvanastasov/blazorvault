@@ -36,8 +36,7 @@
     z-index: 990; }
   #app > main {
     position: relative;
-    padding-left: 30px;
-    padding-top: 30px; }
+    padding: 30px 60px 30px 45px; }
 
 .sidebar-header {
   margin-bottom: 30px;
