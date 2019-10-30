@@ -22,27 +22,14 @@ namespace BlazorVault
 			}
 		}
 
+		protected override Style? DefaultStyle => BlazorVault.Style.Primary;
+
 		/// <summary>
 		/// Renders the badge with rounded edges.
 		/// </summary>
 		[Parameter]
 		public bool Pill { get; set; }
 
-		protected override string VariantClass
-		{
-			get
-			{
-				return string.Format(Modifiers.Elements.BadgeGeneric, VariantClass);
-			}
-		}
-
 		protected override bool Simple => true;
-
-
-		protected override void GetClassString(CssBuilder builder)
-		{
-			builder
-				.Add(Modifiers.Elements.BadgePill, this.Pill);
-		}
 	}
 }
