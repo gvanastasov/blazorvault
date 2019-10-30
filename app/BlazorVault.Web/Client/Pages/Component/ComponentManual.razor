@@ -1,0 +1,36 @@
+﻿@namespace BlazorVault.Web.Client.Pages
+
+<BVHeading Large class="text-right">@Title</BVHeading>
+<hr>
+@Description
+<section class="mb-3">
+    <BVHeading Level="2" As="4">Parameters</BVHeading>
+    @Parameters
+</section>
+
+<section class="mb-3">
+    <BVHeading Level="2" As="4">Functionality</BVHeading>
+    @Functionality
+</section>
+
+<section class="mb-3">
+    <BVHeading Level="2" As="4">Examples</BVHeading>
+    @Examples
+</section>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment Description { get; set; }
+
+    [Parameter]
+    public RenderFragment Parameters { get; set; }
+
+    [Parameter]
+    public RenderFragment Functionality { get; set; }
+
+    [Parameter]
+    public RenderFragment Examples { get; set; }
+}
