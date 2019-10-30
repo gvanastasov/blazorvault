@@ -10,7 +10,18 @@
     <link href="_content/BlazorVault/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <app>Loading...</app>
+    <app>
+        <div class="app-loader">
+            <h1>Blazor<br/>Vault</h1>
+            <div class="lds-ring m-3">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p class="lead">We are getting things<br/>ready for you...</p>
+        </div>
+    </app>
 
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/BlazorVault/bv.main.js"></script>
