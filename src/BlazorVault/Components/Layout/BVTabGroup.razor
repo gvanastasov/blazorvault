@@ -2,21 +2,23 @@
 @namespace BlazorVault
 @inherits BVTabGroupBase
 
-<div @attributes="@UnknownAttributes" class="@GetClassString()">
-    <h1>Tabs</h1>
+<ul @attributes="@UnknownAttributes" class="@GetClassString()" role="tablist">
     <CascadingValue Value="this">
         @ChildContent
-        <div>
-            @foreach (var tab in Tabs)
-            {
-                <div @onclick="@(e => Select(e, tab))">@tab.Trigger</div>
-            }
-        </div>
-        @if (Active != null)
+        @foreach (var tab in Tabs)
         {
-            <div>
-                @Active.ChildContent
-            </div>
+            <li class="nav-item">
+                <a @onclick="@(e => Select(e, tab))" class="nav-link @(tab.IsActive ? "active" : string.Empty)" role="tab">@tab.Trigger</a>
+            </li>
         }
     </CascadingValue>
+</ul>
+
+<div class="tab-content">
+    @if (Active != null)
+    {
+        <div class="tab-pane fade show active">
+            @Active.ChildContent
+        </div>
+    }
 </div>

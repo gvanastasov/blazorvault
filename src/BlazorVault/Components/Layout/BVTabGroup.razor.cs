@@ -12,6 +12,8 @@ namespace BlazorVault.Components.Layout
 
 		public BVTab Active { get; private set; }
 
+		protected override string ClassBase => "nav nav-tabs";
+
 		private bool HasTabs
 		{
 			get
