@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorVault.Components;
+using Microsoft.AspNetCore.Components;
 
-namespace BlazorVault.Components.Layout
+namespace BlazorVault
 {
-	public class BVTabBase : BVContentComponent
+	public sealed class BVTab : BVContentComponent
 	{
 		protected override bool Simple => false;
 

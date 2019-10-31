@@ -8,9 +8,9 @@ namespace BlazorVault.Components.Layout
 	{
 		protected override bool Simple => false;
 
-		public IList<BVTabBase> Tabs { get; private set; } = new List<BVTabBase>();
+		public IList<BVTab> Tabs { get; private set; } = new List<BVTab>();
 
-		public BVTabBase Active { get; private set; }
+		public BVTab Active { get; private set; }
 
 		private bool HasTabs
 		{
@@ -43,12 +43,12 @@ namespace BlazorVault.Components.Layout
 			}
 		}
 
-		public void Select(MouseEventArgs e, BVTabBase tab)
+		public void Select(MouseEventArgs e, BVTab tab)
 		{
 			Select(tab);
 		}
 
-		public void Select(BVTabBase tab)
+		public void Select(BVTab tab)
 		{
 			Active = tab;
 		}

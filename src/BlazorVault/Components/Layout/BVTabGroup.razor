@@ -12,8 +12,11 @@
                 <div @onclick="@(e => Select(e, tab))">@tab.Trigger</div>
             }
         </div>
-        <div>
-            @Active?.ChildContent
-        </div>
+        @if (Active != null)
+        {
+            <div>
+                @Active.ChildContent
+            </div>
+        }
     </CascadingValue>
 </div>
