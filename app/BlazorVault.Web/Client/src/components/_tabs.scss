@@ -1,0 +1,16 @@
+.tab {
+    &-content {
+        padding: 15px;
+        border: 1px solid #dee2e6;
+        border-top: none;
+    }
+}
+
+.nav-tabs .nav-link {
+    cursor: pointer;
+
+    &.active {
+        color: #dc3545;
+        font-weight: bold;
+    }
+}
