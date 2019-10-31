@@ -1,0 +1,28 @@
+﻿@page "/components/button"
+
+<ComponentPage Title="Buttons">
+    <Description>
+        <BVText>Use these for submitting or reseting forms, GUI interaction and others.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        @foreach(var style in Styles.Collection())
+                        {
+                            <BVButton Style="style">@style.ToString()</BVButton>
+                        }
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVButton Style=&quot;Style.Primary&quot;&gt;Primary&lt;/BVButton&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
