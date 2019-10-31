@@ -1,0 +1,35 @@
+﻿@page "/components/code"
+
+<ComponentPage Title="Code">
+    <Description>
+        <BVText>Wrap your code and share it with the world.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;div&gt;
+    &lt;h1&gt;Some Heading&lt;/h1&gt;
+    &lt;br /&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+&lt;/div&gt;
+</BVCode>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        &lt;BVCode&gt;&amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;Some Heading&amp;lt;/h1&amp;gt;
+    &amp;lt;br /&amp;gt;
+    &amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/BVCode&gt;
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
