@@ -8,12 +8,17 @@ namespace BlazorVault
 	public sealed class BVCode : BVContentComponent
 	{
 		[Parameter]
+		public string Src { get; set; }
+
+		[Parameter]
 		public bool SingleLine { get; set; }
 
 		[Parameter]
 		public bool Scrollable { get; set; }
 
 		protected override bool Simple => false;
+
+		private string Text { get; set; }
 
 		protected override void BuildRenderTree(RenderTreeBuilder builder)
 		{
