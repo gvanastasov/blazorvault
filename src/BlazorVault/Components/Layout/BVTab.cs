@@ -15,7 +15,7 @@ namespace BlazorVault
 		[Parameter]
 		public RenderFragment Trigger { get; set; }
 
-		private bool IsActive
+		public bool IsActive
 		{
 			get
 			{
