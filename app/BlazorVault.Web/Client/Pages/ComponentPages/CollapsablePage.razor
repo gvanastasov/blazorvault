@@ -1,0 +1,27 @@
+﻿@page "/components/collapsable"
+
+<ComponentPage Title="Collapsable">
+    <Description>
+        <BVText>Show and hide content areas.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVButton Toggle="example-area">Trigger</BVButton>
+                        <BVCollapsable id="example-area">Some random text should go inhere.</BVCollapsable>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVButton Toggle=&quot;example-area&quot;&gt;Trigger&lt;/BVButton&gt;
+&lt;BVCollapsable id=&quot;example-area&quot;&gt;Some random text should go inhere.&lt;/BVCollapsable&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
