@@ -1,15 +1,22 @@
 ﻿<BVHeading Large class="text-right">@Title</BVHeading>
 <hr>
 @Description
-<section class="mb-3">
-    <BVHeading Level="2" As="4">Parameters</BVHeading>
-    @Parameters
-</section>
 
-<section class="mb-3">
-    <BVHeading Level="2" As="4">Functionality</BVHeading>
-    @Functionality
-</section>
+@if (Parameters != null)
+{
+    <section class="mb-3">
+        <BVHeading Level="2" As="4">Parameters</BVHeading>
+        @Parameters
+    </section>
+}
+
+@if (Functionality != null)
+{
+    <section class="mb-3">
+        <BVHeading Level="2" As="4">Functionality</BVHeading>
+        @Functionality
+    </section>
+}
 
 <section class="mb-3">
     <BVHeading Level="2" As="4">Examples</BVHeading>
