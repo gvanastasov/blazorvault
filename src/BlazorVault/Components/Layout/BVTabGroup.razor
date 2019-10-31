@@ -1,0 +1,19 @@
+﻿@using BlazorVault.Components.Layout
+@namespace BlazorVault
+@inherits BVTabGroupBase
+
+<div @attributes="@UnknownAttributes" class="@GetClassString()">
+    <h1>Tabs</h1>
+    <CascadingValue Value="this">
+        @ChildContent
+        <div>
+            @foreach (var tab in Tabs)
+            {
+                <div @onclick="@(e => Select(e, tab))">@tab.Trigger</div>
+            }
+        </div>
+        <div>
+            @Active?.ChildContent
+        </div>
+    </CascadingValue>
+</div>
