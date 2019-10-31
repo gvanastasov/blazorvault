@@ -1,0 +1,33 @@
+﻿@page "/components/carousel"
+
+<ComponentPage Title="Carousel">
+    <Description>
+        <BVText>Switch back and forth between content.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVCarousel>
+                            <BVCarouselSlide Active="true">Slide 1</BVCarouselSlide>
+                            <BVCarouselSlide>Slide 2</BVCarouselSlide>
+                            <BVCarouselSlide>Slide 3</BVCarouselSlide>
+                        </BVCarousel>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVCarousel&gt;
+    &lt;BVCarouselSlide Active=&quot;true&quot;&gt;Slide 1&lt;/BVCarouselSlide&gt;
+    &lt;BVCarouselSlide&gt;Slide 2&lt;/BVCarouselSlide&gt;
+    &lt;BVCarouselSlide&gt;Slide 3&lt;/BVCarouselSlide&gt;
+&lt;/BVCarousel&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>

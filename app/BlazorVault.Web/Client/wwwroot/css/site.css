@@ -63,7 +63,9 @@
     padding: 10px 30px 10px 10px;
     display: block;
     border-left: 0px solid #dc3545;
-    transition: border-left-width 0.3s,  background-color 0.2s, font-weight 0.2s; }
+    transition: border-left-width 0.3s, 
+ background-color 0.2s,
+ font-weight 0.2s; }
     .sidebar-links > ol > li > a:hover {
       text-decoration: none; }
     .sidebar-links > ol > li > a:hover:not(.active) {
