@@ -1,0 +1,45 @@
+﻿@page "/components/card"
+
+<ComponentPage Title="Card">
+    <Description>
+        <BVText>Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVCard>
+                            <BVCardBody>
+                                <BVCardLine Type="CardLine.Title">Card title</BVCardLine>
+                                <BVCardLine Type="CardLine.Subtitle">Vestibulum at eros</BVCardLine>
+                                <BVCardLine Type="CardLine.Text">Some quick example text to build on the card title and make up the bulk of the card's content.</BVCardLine>
+                            </BVCardBody>
+                            <BVCardBody>
+                                <BVCardLine Type="CardLine.Link">Card link</BVCardLine>
+                                <BVCardLine Type="CardLine.Link">Another link</BVCardLine>
+                            </BVCardBody>
+                        </BVCard>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVCard&gt;
+    &lt;BVCardBody&gt;
+        &lt;BVCardLine Type=&quot;CardLine.Title&quot;&gt;Card title&lt;/BVCardLine&gt;
+        &lt;BVCardLine Type=&quot;CardLine.Subtitle&quot;&gt;Vestibulum at eros&lt;/BVCardLine&gt;
+        &lt;BVCardLine Type=&quot;CardLine.Text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#39;s content.&lt;/BVCardLine&gt;
+    &lt;/BVCardBody&gt;
+    &lt;BVCardBody&gt;
+        &lt;BVCardLine Type=&quot;CardLine.Link&quot;&gt;Card link&lt;/BVCardLine&gt;
+        &lt;BVCardLine Type=&quot;CardLine.Link&quot;&gt;Another link&lt;/BVCardLine&gt;
+    &lt;/BVCardBody&gt;
+&lt;/BVCard&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
