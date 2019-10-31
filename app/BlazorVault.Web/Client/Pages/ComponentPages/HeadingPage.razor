@@ -1,0 +1,37 @@
+﻿@page "/components/heading"
+
+<ComponentPage Title="Headings">
+    <Description>
+        <BVText>Headings are on top of every document section.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVHeading Level="4" As="6">Size</BVHeading>
+            <BVText>Heading size can be set.</BVText>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode src="_content/resources/code/bv-heading-scale.html">&lt;BVHeading Level=&quot;6&quot; As=&quot;1&quot;&gt;Example heading &lt;BVBadge&gt;1&lt;/BVBadge&gt;&lt;/BVHeading&gt;
+&lt;BVHeading Level=&quot;6&quot; As=&quot;2&quot;&gt;Example heading &lt;BVBadge&gt;2&lt;/BVBadge&gt;&lt;/BVHeading&gt;
+&lt;BVHeading Level=&quot;6&quot; As=&quot;3&quot;&gt;Example heading &lt;BVBadge&gt;3&lt;/BVBadge&gt;&lt;/BVHeading&gt;
+&lt;BVHeading Level=&quot;6&quot; As=&quot;4&quot;&gt;Example heading &lt;BVBadge&gt;4&lt;/BVBadge&gt;&lt;/BVHeading&gt;
+&lt;BVHeading Level=&quot;6&quot; As=&quot;5&quot;&gt;Example heading &lt;BVBadge&gt;5&lt;/BVBadge&gt;&lt;/BVHeading&gt;
+&lt;BVHeading Level=&quot;6&quot; As=&quot;6&quot;&gt;Example heading &lt;BVBadge&gt;6&lt;/BVBadge&gt;&lt;/BVHeading&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVHeading Level="6" As="1">Example heading 1</BVHeading>
+                        <BVHeading Level="6" As="2">Example heading 2</BVHeading>
+                        <BVHeading Level="6" As="3">Example heading 3</BVHeading>
+                        <BVHeading Level="6" As="4">Example heading 4</BVHeading>
+                        <BVHeading Level="6" As="5">Example heading 5</BVHeading>
+                        <BVHeading Level="6" As="6">Example heading 6</BVHeading>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
