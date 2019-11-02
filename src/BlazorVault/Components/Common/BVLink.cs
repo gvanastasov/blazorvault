@@ -18,7 +18,7 @@ namespace BlazorVault
 		/// Relative path to the root.
 		/// </summary>
 		[Parameter]
-		public string To { get; set; }
+		public string To { get; set; } = "#";
 
 		[Parameter]
 		public bool Active { get; set; }
