@@ -1,4 +1,4 @@
-﻿namespace BlazorVault.Enums
+﻿namespace BlazorVault
 {
 	public enum HorizontalPosition
 	{

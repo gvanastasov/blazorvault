@@ -1,0 +1,26 @@
+﻿@page "/components/toast"
+
+<ComponentPage Title="Toast">
+    <Description>
+        <BVText>Generic page</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVButton Toggle="test-toast">Show</BVButton>
+                        <BVToast Horizontal="HorizontalPosition.Right" Vertical="VerticalPosition.Bottom" id="test-toast">I am inside toast.</BVToast>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVText Lorem=&quot;30&quot;&gt;&lt;/BVText&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
