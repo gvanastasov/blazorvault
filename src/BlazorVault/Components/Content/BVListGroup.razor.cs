@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorVault.Components.Content
 {
-	public class BVGroupBase : BVContentComponent
+	public class BVListGroupBase : BVContentComponent
 	{
 		[Parameter]
 		public bool Actions { get; set; }

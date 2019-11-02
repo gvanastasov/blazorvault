@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components.Rendering;
 
 namespace BlazorVault
 {
-	public sealed class BVGroupItem : BVStyleComponent
+	public sealed class BVListGroupItem : BVStyleComponent
 	{
 		[Parameter]
 		public bool Active { get; set; }
