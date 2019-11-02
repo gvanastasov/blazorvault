@@ -1,0 +1,36 @@
+﻿@page "/components/modal"
+
+<ComponentPage Title="Modal">
+    <Description>
+        <BVText>Popups everywhere.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVButton @onclick="() => Opened = !Opened">Open</BVButton>
+                        <BVModal id="test-modal" Opened="Opened">
+                            <div>I am inside modal.</div>
+                        </BVModal>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>
+                            &lt;BVDynamic Tag=&quot;div&quot;&gt;I am in a default div.&lt;/BVDynamic&gt;
+                            &lt;BVDynamic Tag=&quot;p&quot;&gt;I am in a paragraph.&lt;/BVDynamic&gt;
+                            &lt;BVDynamic Tag=&quot;a&quot; href=&quot;#&quot;&gt;I am in an anchor.&lt;/BVDynamic&gt;
+                        </BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
+
+@code {
+    public bool Opened { get; set; }
+}
