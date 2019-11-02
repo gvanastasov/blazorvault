@@ -1,0 +1,37 @@
+﻿@page "/components/forms"
+
+<ComponentPage Title="Forms">
+    <Description>
+        <BVText>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVForm>
+                            <BVFormGroup>
+                                <BVLabel For="email">Email address</BVLabel>
+                                <BVInput id="email"/>
+                            </BVFormGroup>
+                            <BVButton Type="ButtonType.Submit">Submit</BVButton>
+                        </BVForm>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVForm&gt;
+    &lt;BVFormGroup&gt;
+        &lt;BVLabel For=&quot;email&quot;&gt;Email address&lt;/BVLabel&gt;
+        &lt;BVInput id=&quot;email&quot;/&gt;
+    &lt;/BVFormGroup&gt;
+    &lt;BVButton Type=&quot;ButtonType.Submit&quot;&gt;Submit&lt;/BVButton&gt;
+&lt;/BVForm&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
