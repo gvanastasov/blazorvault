@@ -1,0 +1,38 @@
+﻿@page "/components/tabs"
+
+<ComponentPage Title="Tabs">
+    <Description>
+        <BVText>Use these for submitting or reseting forms, GUI interaction and others.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVText>Just click the result and code tab buttons at the top.</BVText>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVTabGroup&gt;
+    &lt;BVTab&gt;
+        &lt;Trigger&gt;Result&lt;/Trigger&gt;
+        &lt;ChildContent&gt;
+            &lt;BVText&gt;Just click the result and code tab buttons at the top.&lt;/BVText&gt;
+        &lt;/ChildContent&gt;
+    &lt;/BVTab&gt;
+    &lt;BVTab&gt;
+        &lt;Trigger&gt;Code&lt;/Trigger&gt;
+        &lt;ChildContent&gt;
+            &lt;BVCode&gt;&amp;lt;BVButton Style=&amp;quot;Style.Primary&amp;quot;&amp;gt;Primary&amp;lt;/BVButton&amp;gt;&lt;/BVCode&gt;
+        &lt;/ChildContent&gt;
+    &lt;/BVTab&gt;
+&lt;/BVTabGroup&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
