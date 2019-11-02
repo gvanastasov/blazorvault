@@ -1,0 +1,29 @@
+﻿@page "/components/dynamic"
+
+<ComponentPage Title="Dynamic">
+    <Description>
+        <BVText>Can be anything, almost.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVDynamic Tag="div">I am in a default div.</BVDynamic>
+                        <BVDynamic Tag="p">I am in a paragraph.</BVDynamic>
+                        <BVDynamic Tag="a" href="#">I am in an anchor.</BVDynamic>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVDynamic Tag=&quot;div&quot;&gt;I am in a default div.&lt;/BVDynamic&gt;
+&lt;BVDynamic Tag=&quot;p&quot;&gt;I am in a paragraph.&lt;/BVDynamic&gt;
+&lt;BVDynamic Tag=&quot;a&quot; href=&quot;#&quot;&gt;I am in an anchor.&lt;/BVDynamic&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
