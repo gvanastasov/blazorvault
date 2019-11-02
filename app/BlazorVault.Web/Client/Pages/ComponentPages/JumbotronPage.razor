@@ -1,0 +1,37 @@
+﻿@page "/components/jumbotron"
+
+<ComponentPage Title="Jumbotron">
+    <Description>
+        <BVText>Lightweight, flexible component for showcasing hero unit style content.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVJumbotron>
+                            <BVHeading Level="2" As="4" Large>Hello, world!</BVHeading>
+                            <BVText Lead>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</BVText>
+                            <hr class="my-4" />
+                            <BVText>It uses utility classes for typography and spacing to space content out within the larger container.</BVText>
+                            <BVButton Href="#">Learn more</BVButton>
+                        </BVJumbotron>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVJumbotron&gt;
+    &lt;BVHeading Level=&quot;2&quot; As=&quot;4&quot; Large&gt;Hello, world!&lt;/BVHeading&gt;
+    &lt;BVText Lead&gt;This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.&lt;/BVText&gt;
+    &lt;hr class=&quot;my-4&quot; /&gt;
+    &lt;BVText&gt;It uses utility classes for typography and spacing to space content out within the larger container.&lt;/BVText&gt;
+    &lt;BVButton Href=&quot;#&quot;&gt;Learn more&lt;/BVButton&gt;
+&lt;/BVJumbotron&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>
