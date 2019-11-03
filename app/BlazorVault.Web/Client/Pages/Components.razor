@@ -1,7 +1,39 @@
 ﻿@page "/components"
+<BVHeading Large class="text-right">Components</BVHeading>
+<BVText>Blazor Vault is rich package of reusable components, based on the fairly new tehcnology from the Microsoft development stack - Blazor, as well as a old timer - the popular theming and functionality library - Bootstrap. You can use the provided components to quickly scaffold frontend solution, or extend the existing functionality.</BVText>
+<hr>
+<section class="mb-5">
+    <BVHeading Level="2" As="4">Install</BVHeading>
+    <BVText>The following instructions will set you up for a quick plug and play bootstrap of your object</BVText>
 
-<h3>Components</h3>
+    <BVHeading Level="3" As="6">NuGet:</BVHeading>
+    <ol>
+        <li>Install the nuget from Nuget.org</li>
+        <li>Include the library namespace (either inside your root _Imports.razor) or where you decide.</li>
+    </ol>
 
+    <BVHeading Level="3" As="6">Manual:</BVHeading>
+    <ol>
+        <li>Donwload the source from github.</li>
+        <li>Copy the project to your solution.</li>
+        <li>Include a reference to the newly created copy in your solution.</li>
+        <li>Include the library namespace (either inside your root _Imports.razor) ow wherever you decide.</li>
+    </ol>
+
+    <BVText>For conveniance reasons, all public definitions are uncluded under the same namespace BlazorVault, but in the future the components might be split under different projects and namespaces, in order to improve reusability and scalability.</BVText>
+</section>
+<section class="mb-5">
+    <BVHeading Level="2" As="4">Documentation</BVHeading>
+    <BVText>A detailed documentation of how-to and what-to use can be found both on this website, as well as README.md files in every components physical namespace. Those are subject to change post every release, whereas changelog will also be provided inhere as well.</BVText>
+</section>
+<section class="mb-5">
+    <BVHeading Level="2" As="4">Contributing</BVHeading>
+    <BVText>Contributions are always much appreciated and one can do so, by helping out the development of this project. Feel free to do so at the projects open source page hosted at Github.</BVText>
+</section>
+<section>
+    <BVHeading Level="2" As="4">Author</BVHeading>
+    <BVText>This package was developed and published by Georgi Anastasov in an independant and self driven initiative. Due to the nature of the project, ie. open source distribution, crediting is not required, but if you would like to drop a line or two - feel free to do so and it would be highly appreciated.</BVText>
+</section>
 @code {
     [CascadingParameter(Name = "layout")]
     public MainLayout Layout { get; set; }
