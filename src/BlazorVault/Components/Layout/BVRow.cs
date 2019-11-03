@@ -28,6 +28,7 @@ namespace BlazorVault
 		protected override void GetClassString(CssBuilder builder)
 		{
 			base.GetClassString(builder);
+			builder.Add("no-gutters", NoGutters);
 
 			if (Horizontal.HasValue && Horizontal != Justify.None)
 			{

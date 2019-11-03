@@ -36,6 +36,11 @@
     background: #fcf6f5ff;
     transition: top 0.2s;
     z-index: 990; }
+    #app > header a.header-link-icon > svg {
+      fill: #4a0008;
+      transition: fill 0.3s; }
+      #app > header a.header-link-icon > svg:hover {
+        fill: #dc3545; }
   #app > main {
     position: relative;
     padding: 30px 60px 30px 45px; }

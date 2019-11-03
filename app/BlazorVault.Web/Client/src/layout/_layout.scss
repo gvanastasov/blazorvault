@@ -44,6 +44,16 @@
         transition: top 0.2s;
 
         @include z-index(header);
+
+        & a.header-link-icon {
+            & > svg {
+                fill: $color-dark;
+                transition: fill 0.3s;
+                &:hover {
+                    fill: $color-light;
+                }
+            }
+        }
     }
     
     & > main {
