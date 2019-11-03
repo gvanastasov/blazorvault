@@ -1,0 +1,49 @@
+﻿@page "/components/tree"
+
+<ComponentPage Title="Tree">
+    <Description>
+        <BVText>Tree formations.</BVText>
+    </Description>
+    <Examples>
+        <section>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVTree>
+                            <BVTreeNode>
+                                <Trigger>Beverages</Trigger>
+                                <ChildContent>
+                                    <BVTreeNode>Water</BVTreeNode>
+                                    <BVTreeNode>Coffee</BVTreeNode>
+                                    <BVTreeNode>
+                                        <Trigger>Tea</Trigger>
+                                        <ChildContent>
+                                            <BVTreeNode>Black Tea</BVTreeNode>
+                                            <BVTreeNode>White Tea</BVTreeNode>
+                                            <BVTreeNode>
+                                                <Trigger>Green Tea</Trigger>
+                                                <ChildContent>
+                                                    <BVTreeNode>Sencha</BVTreeNode>
+                                                    <BVTreeNode>Gyokuro</BVTreeNode>
+                                                    <BVTreeNode>Matcha</BVTreeNode>
+                                                    <BVTreeNode>Pi Lo Chun</BVTreeNode>
+                                                </ChildContent>
+                                            </BVTreeNode>
+                                        </ChildContent>
+                                    </BVTreeNode>
+                                </ChildContent>
+                            </BVTreeNode>
+                        </BVTree>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVButton Style=&quot;Style.Primary&quot;&gt;Primary&lt;/BVButton&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </section>
+    </Examples>
+</ComponentPage>

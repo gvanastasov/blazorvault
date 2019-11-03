@@ -1,0 +1,22 @@
+﻿@namespace BlazorVault
+@inherits BlazorVault.Components.Content.BVTreeNodeBase
+
+
+<li>
+    @if (IsLeaf)
+    {
+        @ChildContent
+    }
+    else
+    {
+        <CascadingValue Value="this">
+            <span @onclick="Toggle">@Trigger</span>
+            @if (Expanded)
+            {
+                <ul>
+                    @ChildContent
+                </ul>
+            }
+        </CascadingValue>
+    }
+</li>

@@ -1,0 +1,13 @@
+﻿@namespace BlazorVault
+@inherits BlazorVault.Components.Content.BVTreeBase
+
+<ul @attributes="@UnknownAttributes" class="@GetClassString()" role="tablist">
+    <CascadingValue Value="this">
+        @ChildContent
+        @foreach (var tab in Children)
+        {
+            <li class="nav-item">
+            </li>
+        }
+    </CascadingValue>
+</ul>
