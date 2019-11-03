@@ -10,6 +10,14 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A collection of reusable Blazor based components.</Description>
     <PackageProjectUrl>www.blazorvault.com</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/gvanastasov/blazorvault</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>blazor</PackageTags>
+    <PackageReleaseNotes>Alpha release of the package with some known bugs and missing functionality.</PackageReleaseNotes>
+    <Copyright>MIT License</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Georgi Anastasov</Authors>
   </PropertyGroup>
 
 
@@ -38,6 +46,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
