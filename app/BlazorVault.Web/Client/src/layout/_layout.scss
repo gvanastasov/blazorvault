@@ -39,8 +39,9 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.18);
         position: fixed;
         top: 0;
-        width: calc(100% - 250px);
+        width: calc(100% - #{$sidebar-width});
         background: $color-white;
+        transition: top 0.2s;
 
         @include z-index(header);
     }
@@ -48,5 +49,16 @@
     & > main {
         position: relative;
         padding: 30px 60px 30px 45px;
+    }
+
+    &.app-gates {
+        left: 0;
+        top: 0;
+        width: 100%;
+
+        & > header {
+            top: -#{$topbar-height};
+            left: #{$sidebar-width};
+        }
     }
 }

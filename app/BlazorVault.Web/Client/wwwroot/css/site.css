@@ -34,10 +34,18 @@
     top: 0;
     width: calc(100% - 250px);
     background: #fcf6f5ff;
+    transition: top 0.2s;
     z-index: 990; }
   #app > main {
     position: relative;
     padding: 30px 60px 30px 45px; }
+  #app.app-gates {
+    left: 0;
+    top: 0;
+    width: 100%; }
+    #app.app-gates > header {
+      top: -90px;
+      left: 250px; }
 
 .sidebar-header {
   margin-bottom: 30px;

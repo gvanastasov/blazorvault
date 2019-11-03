@@ -1,7 +1,7 @@
 ﻿@using BlazorVault.Web.Client.Domain
 @inherits LayoutComponentBase
 
-<div id="app">
+<div id="app" class="@(!Options.GatesHidden ? "app-gates" : string.Empty)">
     <nav class="@(Options.ShowSideBar ? string.Empty : "collapsed")">
         <NavMenu />
     </nav>
@@ -14,7 +14,7 @@
 </div>
 <div id="vault">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="100%" height="100%" version="1.1" viewBox="0 0 200 100" class="" preserveAspectRatio="xMidYMid slice">
-        <g transform="translate(0 -270.54)" id="vault-gates" class="@(Options.GatesHidden ? "hidden": "open")">
+        <g transform="translate(0 -270.54)" id="vault-gates" class="@(Options.GatesHidden ? "hidden" : "open")">
             <path d="m106.93 270.54-24.592 100h75.578l7.7715-31.598v-68.402z" fill="#2f2f2f" class="vault-gate-right-0" />
             <path d="m106.93 270.54-24.592 100h75.58l2.4512-9.9648v-90.035z" fill="#1d1d1d" class="vault-gate-right-1" />
             <path d="m106.93 270.54-24.592 100h119.06v-100z" class="vault-gate-right-2" />
