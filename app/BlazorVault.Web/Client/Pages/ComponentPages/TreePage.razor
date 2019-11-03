@@ -40,7 +40,31 @@
                 <BVTab>
                     <Trigger>Code</Trigger>
                     <ChildContent>
-                        <BVCode>&lt;BVButton Style=&quot;Style.Primary&quot;&gt;Primary&lt;/BVButton&gt;</BVCode>
+                        <BVCode>&lt;BVTree&gt;
+    &lt;BVTreeNode&gt;
+        &lt;Trigger&gt;Beverages&lt;/Trigger&gt;
+        &lt;ChildContent&gt;
+            &lt;BVTreeNode&gt;Water&lt;/BVTreeNode&gt;
+            &lt;BVTreeNode&gt;Coffee&lt;/BVTreeNode&gt;
+            &lt;BVTreeNode&gt;
+                &lt;Trigger&gt;Tea&lt;/Trigger&gt;
+                &lt;ChildContent&gt;
+                    &lt;BVTreeNode&gt;Black Tea&lt;/BVTreeNode&gt;
+                    &lt;BVTreeNode&gt;White Tea&lt;/BVTreeNode&gt;
+                    &lt;BVTreeNode&gt;
+                        &lt;Trigger&gt;Green Tea&lt;/Trigger&gt;
+                        &lt;ChildContent&gt;
+                            &lt;BVTreeNode&gt;Sencha&lt;/BVTreeNode&gt;
+                            &lt;BVTreeNode&gt;Gyokuro&lt;/BVTreeNode&gt;
+                            &lt;BVTreeNode&gt;Matcha&lt;/BVTreeNode&gt;
+                            &lt;BVTreeNode&gt;Pi Lo Chun&lt;/BVTreeNode&gt;
+                        &lt;/ChildContent&gt;
+                    &lt;/BVTreeNode&gt;
+                &lt;/ChildContent&gt;
+            &lt;/BVTreeNode&gt;
+        &lt;/ChildContent&gt;
+    &lt;/BVTreeNode&gt;
+&lt;/BVTree&gt;</BVCode>
                     </ChildContent>
                 </BVTab>
             </BVTabGroup>
