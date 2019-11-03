@@ -6,7 +6,10 @@
     <PackageId>BlazorVault</PackageId>
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <Version>1.0.0</Version>
+    <Version>0.1.0-alpha</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A collection of reusable Blazor based components.</Description>
+    <PackageProjectUrl>www.blazorvault.com</PackageProjectUrl>
   </PropertyGroup>
 
 
