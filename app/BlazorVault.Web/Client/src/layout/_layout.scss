@@ -60,5 +60,9 @@
             top: -#{$topbar-height};
             left: #{$sidebar-width};
         }
+
+        & > main {
+            padding: 0;
+        }
     }
 }

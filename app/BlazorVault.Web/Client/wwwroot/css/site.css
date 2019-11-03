@@ -46,6 +46,8 @@
     #app.app-gates > header {
       top: -90px;
       left: 250px; }
+    #app.app-gates > main {
+      padding: 0; }
 
 .sidebar-header {
   margin-bottom: 30px;
