@@ -1,7 +1,7 @@
 {
     "name": "BlazorVault",
     "short_name": "BV",
-    "start_url": "www.blazorvault.com",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
