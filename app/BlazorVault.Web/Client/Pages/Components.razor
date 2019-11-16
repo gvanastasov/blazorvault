@@ -5,10 +5,9 @@
 <section class="mb-5">
     <BVHeading Level="2" As="4">Install</BVHeading>
     <BVText>The following instructions will set you up for a quick plug and play bootstrap of your object</BVText>
-
     <BVHeading Level="3" As="6">NuGet:</BVHeading>
     <ol>
-        <li>Install the nuget from <a href="https://www.nuget.org/packages/BlazorVault/">NuGet.org</a></li>
+        <li>Install the nuget from <a href="https://www.nuget.org/packages/BlazorVault/">NuGet.org</a>.</li>
         <li>
             <p>Include the library namespace (either inside your root _Imports.razor) or where you decide.</p>
             <BVListGroup>
@@ -21,31 +20,29 @@
             </BVListGroup>
         </li>
     </ol>
-
     <BVHeading Level="3" As="6">Manual:</BVHeading>
     <ol>
-        <li>Donwload the source from github.</li>
-        <li>Copy the project to your solution.</li>
-        <li>Include a reference to the newly created copy in your solution.</li>
-        <li>Include the library namespace (either inside your root _Imports.razor) ow wherever you decide.</li>
+        <li>Donwload the source from <a href="https://github.com/gvanastasov/blazorvault">Github</a>.</li>
+        <li>Copy the project somewhere inside your solution folder.</li>
+        <li>Include a reference to the newly created copy.</li>
+        <li>Include the library namespace (either inside your root _Imports.razor) as described above.</li>
     </ol>
-
-    <BVText>For conveniance reasons, all public definitions are uncluded under the same namespace BlazorVault, but in the future the components might be split under different projects and namespaces, in order to improve reusability and scalability.</BVText>
+    <BVText>For conveniance reasons, all public definitions are uncluded under the same namespace BlazorVault, but in the future the components might be split under different projects and namespaces, in order to improve reusability and scalability. You are also welcome to use inline namespaces, although that would lead to repetitive code.</BVText>
 </section>
 <hr>
 <section class="mb-5">
     <BVHeading Level="2" As="4">Documentation</BVHeading>
-    <BVText>A detailed documentation of how-to and what-to use can be found both on this website, as well as README.md files in every components physical namespace. Those are subject to change post every release, whereas changelog will also be provided inhere as well.</BVText>
+    <BVText>A detailed documentation of how-to and what-to use can be found both on this website, as well as README.md files in every components physical location. Those are subject to change post every release, whereas changelog will also be provided inhere as well. Once the structure of the project is cleared out, the breaking changes will be put down to minimum (i.e. post beta release).</BVText>
 </section>
 <hr>
 <section class="mb-5">
     <BVHeading Level="2" As="4">Contributing</BVHeading>
-    <BVText>Contributions are always much appreciated and one can do so, by helping out the development of this project. Feel free to do so at the projects open source page hosted at Github.</BVText>
+    <BVText>Contributions are always much appreciated and one can do so, by helping out the development of this project. Feel free to do so at the projects open source page hosted at <a href="https://github.com/gvanastasov/blazorvault">Github</a>. Follow the proposed contribution guidelines and I would try to activelly respond and update the repository, whenever I can.</BVText>
 </section>
 <hr>
 <section>
     <BVHeading Level="2" As="4">Author</BVHeading>
-    <BVText>This package was developed and published by Georgi Anastasov in an independant and self driven initiative. Due to the nature of the project, ie. open source distribution, crediting the author is not required, but if you would like to drop a line or two - feel free to do so and it would be highly appreciated.</BVText>
+    <BVText>This package was developed and published by me (Georgi Anastasov), in an independant and self driven initiative. Due to the nature of the project, ie. open source distribution, crediting the author is not required, but if you would like to drop a line or two - feel free to do so and it would be highly appreciated. You can check some other interesting things around my personal website <a href="https://codereactory.com">CodeReactory</a>.</BVText>
 </section>
 @code {
     [CascadingParameter(Name = "layout")]
