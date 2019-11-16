@@ -1,67 +1,112 @@
 @import url("open-iconic/font/css/open-iconic-bootstrap.min.css");
 #app {
   position: relative;
-  left: 250px;
-  top: 90px;
-  width: calc(100% - 250px);
-  min-height: calc(100vh - 90px);
+  min-height: 100vh;
   background-color: #fcf6f5ff; }
+  #app > header {
+    height: 60px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    position: fixed;
+    bottom: 0;
+    background: #fcf6f5ff;
+    transition: top 0.2s;
+    display: flex;
+    align-items: center;
+    z-index: 990; }
+    @media (min-width: 768px) {
+      #app > header {
+        top: 0;
+        border-top: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25); } }
+    #app > header .header-link-icon {
+      cursor: pointer;
+      margin-left: 5px; }
+      #app > header .header-link-icon > svg {
+        fill: #000;
+        transition: fill 0.3s; }
+        @media (min-width: 768px) {
+          #app > header .header-link-icon > svg:hover {
+            fill: #dc3545; } }
+      #app > header .header-link-icon.active > svg {
+        fill: #990011FF; }
   #app > nav {
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    height: 100vh;
-    min-width: 250px;
-    max-width: 250px;
-    transition: left 0.3s ease-in-out;
+    bottom: 90px;
+    min-height: 100vh;
+    transition: left 0.3s ease-in-out, box-shadow 0.3s;
     color: #fcf6f5ff;
     overflow-x: hidden;
     text-align: center;
-    background: linear-gradient(180deg, #990011FF 0%, #4a0008 100%);
-    z-index: 990; }
+    box-shadow: 1px 0px 0px #990011FF, 3px 0px 10px #000;
+    background-color: #4a0008;
+    z-index: 980; }
     #app > nav.collapsed {
-      left: -250px;
+      left: -100%;
       pointer-events: none;
-      position: absolute; }
-      #app > nav.collapsed + #content {
-        left: 0px; }
-  #app > header {
-    height: 90px;
-    padding: 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.18);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-    position: fixed;
-    top: 0;
-    width: calc(100% - 250px);
-    background: #fcf6f5ff;
-    transition: top 0.2s;
-    z-index: 990; }
-    #app > header a.header-link-icon > svg {
-      fill: #4a0008;
-      transition: fill 0.3s; }
-      #app > header a.header-link-icon > svg:hover {
-        fill: #dc3545; }
+      box-shadow: none; }
+    @media (min-width: 768px) {
+      #app > nav {
+        width: 250px; }
+        #app > nav.collapsed {
+          left: 0px;
+          pointer-events: auto; } }
   #app > main {
     position: relative;
-    padding: 30px 60px 30px 45px; }
+    padding: 15px 15px 80px 15px;
+    margin-left: 0; }
+    #app > main > h1 {
+      text-align: center; }
+      @media (min-width: 768px) {
+        #app > main > h1 {
+          text-align: right; } }
+    @media (min-width: 768px) {
+      #app > main {
+        padding: 80px 30px 15px;
+        left: 250px;
+        width: calc(100% - 250px); } }
   #app.app-gates {
     left: 0;
     top: 0;
     width: 100%; }
     #app.app-gates > header {
-      top: -90px;
-      left: 250px; }
+      top: -90px; }
+    @media (min-width: 768px) {
+      #app.app-gates > nav {
+        left: -250px; } }
     #app.app-gates > main {
-      padding: 0; }
+      width: 100%;
+      left: 0px;
+      padding: 0;
+      margin-left: auto; }
 
 .sidebar-header {
-  margin-bottom: 30px;
-  padding: 30px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  position: relative;
-  height: 90px;
-  background: #990011FF; }
+  padding: 20px;
+  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  background: #990011FF;
+  position: absolute;
+  height: 70px;
+  left: 10px;
+  top: -20px; }
+  @media (min-width: 768px) {
+    .sidebar-header {
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 60px;
+      text-align: center;
+      border-top: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25); } }
+  .sidebar-header > img {
+    height: 100%; }
   .sidebar-header > a {
     position: absolute;
     top: 0;
@@ -69,29 +114,45 @@
     height: 100%;
     width: 100%; }
 
-.sidebar-links > h3 {
-  text-align: right;
-  padding-right: 30px; }
-
-.sidebar-links > ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: right; }
-  .sidebar-links > ol > li > a {
-    color: white;
-    padding: 10px 30px 10px 10px;
-    display: block;
-    border-left: 0px solid #dc3545;
-    transition: border-left-width 0.3s,  background-color 0.2s, font-weight 0.2s; }
-    .sidebar-links > ol > li > a:hover {
-      text-decoration: none; }
-    .sidebar-links > ol > li > a:hover:not(.active) {
-      border-left-width: 10px;
-      background-color: #4a0008; }
-    .sidebar-links > ol > li > a.active {
-      font-weight: bold;
-      background-color: #dc3545; }
+.sidebar-links {
+  padding-bottom: 60px; }
+  @media (min-width: 768px) {
+    .sidebar-links {
+      padding-bottom: 0px;
+      padding-top: 60px; } }
+  .sidebar-links__header {
+    padding: 15px 30px 10px 0px;
+    text-align: right;
+    background-color: #990011FF; }
+    .sidebar-links__header > a {
+      color: white;
+      font-size: 2.25rem; }
+  .sidebar-links > h3 {
+    text-align: right;
+    padding-right: 30px; }
+  .sidebar-links > ol {
+    background: linear-gradient(180deg, #990011FF 0%, #4a0008 100%);
+    margin: 0;
+    padding: 0 0 30px;
+    list-style: none;
+    text-align: right; }
+    @media (min-width: 768px) {
+      .sidebar-links > ol {
+        padding-bottom: 0px; } }
+    .sidebar-links > ol > li > a {
+      color: white;
+      padding: 10px 30px 10px 10px;
+      display: block;
+      border-left: 0px solid #dc3545;
+      transition: border-left-width 0.3s,  background-color 0.2s, font-weight 0.2s; }
+      .sidebar-links > ol > li > a:hover {
+        text-decoration: none; }
+      .sidebar-links > ol > li > a:hover:not(.active) {
+        border-left-width: 10px;
+        background-color: #4a0008; }
+      .sidebar-links > ol > li > a.active {
+        font-weight: bold;
+        background-color: #dc3545; }
 
 .app-loader {
   align-items: center;
@@ -190,6 +251,17 @@
 
 body {
   font-family: monospace; }
+  @media (max-width: 768px) {
+    body {
+      overflow-wrap: break-word; }
+      body .display-1 {
+        font-size: 3rem; }
+      body .display-2 {
+        font-size: 2.75rem; }
+      body .display-3 {
+        font-size: 2.25rem; }
+      body .display-4 {
+        font-size: 1.75rem; } }
 
 .landing-page {
   align-items: center;

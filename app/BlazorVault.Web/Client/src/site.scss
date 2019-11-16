@@ -89,6 +89,23 @@
 
 body {
     font-family: monospace;
+
+    @media (max-width: 768px) {
+        overflow-wrap: break-word;
+
+        .display-1 {
+            font-size: 3rem;
+        }
+        .display-2 {
+            font-size: 2.75rem;
+        }
+        .display-3 {
+            font-size: 2.25rem;
+        }
+        .display-4 {
+            font-size: 1.75rem;
+        }
+    }
 }
 
 .landing-page {

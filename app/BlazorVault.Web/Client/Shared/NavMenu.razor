@@ -1,19 +1,15 @@
 ﻿@inject NavigationManager NavigationManager;
 
-<div class="sidebar-header">
-    <h3 class="sr-only">Blazor Vault</h3>
-    <img src="images/blazor-vault-logo.png" alt="blazor vault logo" />
-    <BVLink To="@Routes.Home"><span class="sr-only">Home</span></BVLink>
-</div>
-
 <section class="sidebar-links">
-    <BVLink To="/components">Components</BVLink>
-    <hr />
+    <div class="sidebar-links__header">
+        <BVLink To="/components">Components</BVLink>
+    </div>
     <ol class="list-unstyled">
         @foreach (var item in links)
         {
             <li>
                 <BVLink To="@item.Key">@item.Value</BVLink>
+                <hr class="my-0"/>
             </li>
         }
     </ol>
