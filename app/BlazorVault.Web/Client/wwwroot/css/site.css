@@ -268,6 +268,15 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh; }
+  .landing-page a.btn-primary {
+    background-color: #990011FF;
+    border-color: #990011FF;
+    border-width: 2px; }
+    .landing-page a.btn-primary:active {
+      background-color: #dc3545 !important;
+      border-color: #990011FF !important; }
+    .landing-page a.btn-primary:focus {
+      box-shadow: 0px 0px 10px #dc3545 !important; }
 
 .text-primary {
   color: #dc3545 !important; }

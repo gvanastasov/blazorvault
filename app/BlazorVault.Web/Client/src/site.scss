@@ -113,6 +113,21 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+
+    & a.btn-primary {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        border-width: 2px;
+
+        &:active {
+            background-color: $color-light !important;
+            border-color: $color-primary !important;
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 10px $color-light !important;
+        }
+    }
 }
 
 // todo: override theme instead
