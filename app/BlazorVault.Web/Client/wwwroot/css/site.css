@@ -330,5 +330,5 @@ body {
     .landing-page a.btn-primary:focus {
       box-shadow: 0px 0px 10px #dc3545 !important; }
 
-.text-primary {
-  color: #dc3545 !important; }
+.documentation-text--primary {
+  color: #dc3545; }

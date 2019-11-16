@@ -188,7 +188,6 @@ body {
     }
 }
 
-// todo: override theme instead
-.text-primary {
-    color: $color-light !important;
+.documentation-text--primary {
+    color: $color-light;
 }
