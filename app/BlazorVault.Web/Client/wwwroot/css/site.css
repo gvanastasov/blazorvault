@@ -11,13 +11,14 @@
     border-top: 1px solid rgba(0, 0, 0, 0.25);
     position: fixed;
     bottom: 0;
-    background: #fcf6f5ff;
+    background: #69000c;
     transition: top 0.2s;
     display: flex;
     align-items: center;
     z-index: 990; }
     @media (min-width: 768px) {
       #app > header {
+        background-color: #fcf6f5ff;
         top: 0;
         border-top: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.25);
@@ -32,7 +33,7 @@
           #app > header .header-link-icon > svg:hover {
             fill: #dc3545; } }
       #app > header .header-link-icon.active > svg {
-        fill: #990011FF; }
+        fill: #000; }
   #app > nav {
     position: fixed;
     width: 100%;
@@ -88,7 +89,7 @@
 
 .sidebar-header {
   padding: 20px;
-  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.6);
   border-top: 1px solid rgba(0, 0, 0, 0.25);
   background: #990011FF;
   position: absolute;
@@ -292,6 +293,12 @@ body {
       body .display-4 {
         font-size: 1.75rem; } }
 
+/* todo: move out of here */
+.documentation-table th, .documentation-table td {
+  padding: .75rem;
+  vertical-align: top;
+  border: 1px solid #dee2e6; }
+
 .landing-page {
   align-items: center;
   display: flex;
@@ -302,7 +309,9 @@ body {
     padding: 30px;
     width: 500px;
     height: 400px;
-    z-index: 1001; }
+    z-index: 1001;
+    box-shadow: inset 0 0 10px black;
+    border: 1px solid #dc3545; }
     @media (max-width: 768px) {
       .landing-page > div {
         width: 70%; } }
