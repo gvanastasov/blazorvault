@@ -268,3 +268,6 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh; }
+
+.text-primary {
+  color: #dc3545 !important; }

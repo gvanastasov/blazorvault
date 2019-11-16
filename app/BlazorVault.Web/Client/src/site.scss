@@ -114,3 +114,8 @@ body {
     justify-content: center;
     min-height: 100vh;
 }
+
+// todo: override theme instead
+.text-primary {
+    color: $color-light !important;
+}

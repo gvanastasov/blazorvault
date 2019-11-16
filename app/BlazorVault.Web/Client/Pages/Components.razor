@@ -9,7 +9,17 @@
     <BVHeading Level="3" As="6">NuGet:</BVHeading>
     <ol>
         <li>Install the nuget from <a href="https://www.nuget.org/packages/BlazorVault/">NuGet.org</a></li>
-        <li>Include the library namespace (either inside your root _Imports.razor) or where you decide.</li>
+        <li>
+            <p>Include the library namespace (either inside your root _Imports.razor) or where you decide.</p>
+            <BVListGroup>
+                <BVListGroupItem><span class="text-primary">_Imports.razor</span></BVListGroupItem>
+                <BVListGroupItem>
+                    <BVCode>@@using ...
+@@using BlazorVault
+...</BVCode>
+                </BVListGroupItem>
+            </BVListGroup>
+        </li>
     </ol>
 
     <BVHeading Level="3" As="6">Manual:</BVHeading>
@@ -22,14 +32,17 @@
 
     <BVText>For conveniance reasons, all public definitions are uncluded under the same namespace BlazorVault, but in the future the components might be split under different projects and namespaces, in order to improve reusability and scalability.</BVText>
 </section>
+<hr>
 <section class="mb-5">
     <BVHeading Level="2" As="4">Documentation</BVHeading>
     <BVText>A detailed documentation of how-to and what-to use can be found both on this website, as well as README.md files in every components physical namespace. Those are subject to change post every release, whereas changelog will also be provided inhere as well.</BVText>
 </section>
+<hr>
 <section class="mb-5">
     <BVHeading Level="2" As="4">Contributing</BVHeading>
     <BVText>Contributions are always much appreciated and one can do so, by helping out the development of this project. Feel free to do so at the projects open source page hosted at Github.</BVText>
 </section>
+<hr>
 <section>
     <BVHeading Level="2" As="4">Author</BVHeading>
     <BVText>This package was developed and published by Georgi Anastasov in an independant and self driven initiative. Due to the nature of the project, ie. open source distribution, crediting the author is not required, but if you would like to drop a line or two - feel free to do so and it would be highly appreciated.</BVText>
