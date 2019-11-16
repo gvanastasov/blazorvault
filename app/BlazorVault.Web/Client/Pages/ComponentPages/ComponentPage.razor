@@ -1,28 +1,24 @@
 ﻿<BVHeading Large class="text-right">@Title</BVHeading>
 <hr>
 @Description
-
 @if (Parameters != null)
 {
-    <section class="mb-3">
-        <BVHeading Level="2" As="4">Parameters</BVHeading>
+    <ComponentSection Title="Parameters">
         @Parameters
-    </section>
+    </ComponentSection>
 }
-
 @if (Functionality != null)
 {
-    <section class="mb-3">
-        <BVHeading Level="2" As="4">Functionality</BVHeading>
+    <ComponentSection Title="Functionality">
         @Functionality
-    </section>
+    </ComponentSection>
 }
-
-<section class="mb-3">
-    <BVHeading Level="2" As="4">Examples</BVHeading>
-    @Examples
-</section>
-
+@if (Examples != null)
+{
+    <ComponentSection Title="Examples">
+        @Examples
+    </ComponentSection>
+}
 @code {
     [Parameter]
     public string Title { get; set; }
