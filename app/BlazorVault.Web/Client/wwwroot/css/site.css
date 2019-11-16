@@ -204,50 +204,79 @@
     color: #dc3545;
     font-weight: bold; }
 
+.gate-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: #990011;
+  transition: top 0.3s ease-in-out; }
+  .gate-top:after {
+    content: '';
+    display: block;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 250px);
+    background-color: #fcf6f5ff; }
+    @media (max-width: 768px) {
+      .gate-top:after {
+        left: 15%;
+        width: 70%; } }
+
+.gate-bottom {
+  position: absolute;
+  top: 50vh;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: #fcf6f5ff;
+  transition: top 0.3s ease-in-out; }
+  .gate-bottom:before, .gate-bottom:after {
+    content: '';
+    display: block;
+    width: calc(50% - 250px);
+    position: absolute;
+    top: 0;
+    border-top: 5px solid #990011FF;
+    height: 50vh; }
+    @media (max-width: 768px) {
+      .gate-bottom:before, .gate-bottom:after {
+        width: 15%; } }
+  .gate-bottom:before {
+    left: 0; }
+  .gate-bottom:after {
+    left: calc(50% + 250px); }
+    @media (max-width: 768px) {
+      .gate-bottom:after {
+        left: 85%; } }
+  .gate-bottom > div {
+    width: 510px;
+    position: absolute;
+    top: 0;
+    border: 5px solid #990011FF;
+    border-top: none;
+    height: 205px;
+    left: calc(50% - 255px); }
+    @media (max-width: 768px) {
+      .gate-bottom > div {
+        width: calc(70% + 10px);
+        left: calc(15% - 5px); } }
+
 #vault {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  pointer-events: none;
-  z-index: 1000; }
-  #vault-gates.open > path.vault-gate-left-0 {
-    transform: translateX(-32px);
-    transition: transform 0.3s ease-in-out; }
-  #vault-gates.open > path.vault-gate-left-1 {
-    transform: translateX(-40px);
-    transition: transform 0.3s ease-in-out 0.2s; }
-  #vault-gates.open > path.vault-gate-left-2 {
-    transform: translateX(-50px);
-    transition: transform 0.4s ease-in-out 0.3s; }
-  #vault-gates.open > path.vault-gate-right-0 {
-    transform: translateX(35px);
-    transition: transform 0.35s ease-in-out; }
-  #vault-gates.open > path.vault-gate-right-1 {
-    transform: translateX(40px);
-    transition: transform 0.3s ease-in-out 0.2s; }
-  #vault-gates.open > path.vault-gate-right-2 {
-    transform: translateX(47px);
-    transition: transform 0.5s ease-in-out 0.3s; }
-  #vault-gates.hidden > path.vault-gate-left-0 {
-    transform: translateX(-100%);
-    transition: transform 0.4s ease-in-out 0.3s; }
-  #vault-gates.hidden > path.vault-gate-left-1 {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out 0.2s; }
-  #vault-gates.hidden > path.vault-gate-left-2 {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out; }
-  #vault-gates.hidden > path.vault-gate-right-0 {
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in-out 0.3s; }
-  #vault-gates.hidden > path.vault-gate-right-1 {
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out 0.2s; }
-  #vault-gates.hidden > path.vault-gate-right-2 {
-    transform: translateX(100%);
-    transition: transform 0.35s ease-in-out; }
+  overflow: hidden;
+  pointer-events: none; }
+  #vault.open > .gate-top {
+    top: -50vh; }
+  #vault.open > .gate-bottom {
+    top: 100vh; }
 
 body {
   font-family: monospace; }
@@ -268,6 +297,20 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh; }
+  .landing-page > div {
+    background-color: #fcf6f5ff;
+    padding: 30px;
+    width: 500px;
+    height: 400px;
+    z-index: 1001; }
+    @media (max-width: 768px) {
+      .landing-page > div {
+        width: 70%; } }
+  @media (max-width: 768px) {
+    .landing-page h1 {
+      font-size: 1.5rem; }
+    .landing-page p {
+      font-size: smaller; } }
   .landing-page a.btn-primary {
     background-color: #990011FF;
     border-color: #990011FF;
