@@ -1,5 +1,6 @@
 ﻿using BlazorVault.Constants;
 using Microsoft.AspNetCore.Components;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorVault
 {
@@ -12,6 +13,10 @@ namespace BlazorVault
 		/// <summary>
 		/// Describes the ability to dismiss/hide the alart message.
 		/// </summary>
+		[Display(
+			Name = nameof(Dismissible),
+			Description = "Describes the ability to dismiss/hide the alart message.",
+			Order = 10)]
 		[Parameter]
 		public bool Dismissible { get; set; }
 

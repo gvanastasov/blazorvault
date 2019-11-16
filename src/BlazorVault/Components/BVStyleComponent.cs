@@ -2,6 +2,7 @@
 using BlazorVault.Constants;
 using BlazorVault.Utils;
 using Microsoft.AspNetCore.Components;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorVault
 {
@@ -9,6 +10,13 @@ namespace BlazorVault
 	{
 		private Style? _style;
 
+		/// <summary>
+		/// TODO: write description.
+		/// </summary>
+		[Display(
+			Name = nameof(Style),
+			Description = "How to style the thing.",
+			Order = 10)]
 		[Parameter]
 		public virtual Style? Style
 		{

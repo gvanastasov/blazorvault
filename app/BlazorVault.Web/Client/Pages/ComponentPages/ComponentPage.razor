@@ -1,10 +1,27 @@
-﻿<BVHeading Large class="text-right">@Title</BVHeading>
+﻿@using System.ComponentModel.DataAnnotations;
+<BVHeading Large class="text-right">@Title</BVHeading>
 @Description
 <hr>
-@if (Parameters != null)
+@if (Parameterss != null)
 {
     <ComponentSection Title="Parameters">
-        @Parameters
+        <table class="documentation-table">
+            <thead>
+                <tr>
+                    <th>@nameof(DisplayAttribute.Name)</th>
+                    <th>@nameof(DisplayAttribute.Description)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Parameterss)
+                {
+                    <tr>
+                        <td>@item.Key</td>
+                        <td>@item.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </ComponentSection>
 }
 @if (Functionality != null)
@@ -34,4 +51,30 @@
 
     [Parameter]
     public RenderFragment Examples { get; set; }
+
+    [Parameter]
+    public Type Type { get; set; }
+
+    private Dictionary<string, string> Parameterss { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (this.Type != null)
+        {
+            this.Parameterss = new Dictionary<string, string>();
+            var properties = this.Type.GetProperties();
+
+            foreach (var prop in properties)
+            {
+                var display = prop
+                    .GetCustomAttributes(typeof(DisplayAttribute), true)
+                    .FirstOrDefault() as DisplayAttribute;
+
+                if (display != null)
+                {
+                    this.Parameterss.Add(display.Name, display.Description);
+                }
+            }
+        }
+    }
 }
