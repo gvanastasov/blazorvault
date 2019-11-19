@@ -14,6 +14,9 @@ namespace BlazorVault.Components
 		[Parameter(CaptureUnmatchedValues = true)]
 		public IReadOnlyDictionary<string, object> UnknownAttributes { get; set; }
 
+		[Parameter]
+		public bool Debug { get; set; }
+
 		protected virtual string ClassBase { get; }
 
 		protected virtual string DefaultTag
