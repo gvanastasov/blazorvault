@@ -25,16 +25,14 @@
             <BVTab>
                 <Trigger>Code</Trigger>
                 <ChildContent>
-                    <BVCode>
-                        &lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-                        &lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple secondary alert - check it out!&lt;/BVAlert&gt;
-                        &lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple success alert - check it out!&lt;/BVAlert&gt;
-                        &lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple danger alert - check it out!&lt;/BVAlert&gt;
-                        &lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple warning alert - check it out!&lt;/BVAlert&gt;
-                        &lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple info alert - check it out!&lt;/BVAlert&gt;
-                        &lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple light alert - check it out!&lt;/BVAlert&gt;
-                        &lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple dark alert - check it out!&lt;/BVAlert&gt;
-                    </BVCode>
+                    <BVCode>&lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple secondary alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple success alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple danger alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple warning alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple info alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple light alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple dark alert - check it out!&lt;/BVAlert&gt;</BVCode>
                 </ChildContent>
             </BVTab>
         </BVTabGroup>
@@ -54,14 +52,12 @@
             <BVTab>
                 <Trigger>Code</Trigger>
                 <ChildContent>
-                    <BVCode>
-                        &lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;
-                        &lt;BVHeading Level=&quot;4&quot;&gt;Random Heading&lt;/BVHeading&gt;
-                        &lt;BVText Lorem=&quot;20&quot; /&gt;
-                        &lt;hr /&gt;
-                        &lt;BVText Lorem=&quot;5&quot; /&gt;
-                        &lt;/BVAlert&gt;
-                    </BVCode>
+                    <BVCode>&lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;
+&lt;BVHeading Level=&quot;4&quot;&gt;Random Heading&lt;/BVHeading&gt;
+&lt;BVText Lorem=&quot;20&quot; /&gt;
+&lt;hr /&gt;
+&lt;BVText Lorem=&quot;5&quot; /&gt;
+&lt;/BVAlert&gt;</BVCode>
                 </ChildContent>
             </BVTab>
         </BVTabGroup>
@@ -78,6 +74,12 @@
                     }
                 </ChildContent>
             </BVTab>
+            <BVTab>
+                <Trigger>Code</Trigger>
+                <ChildContent>
+                    <BVCode>&lt;BVAlert Dismissible&gt;This alert can be dismissed by clicking the X at the end.&lt;/BVAlert&gt;</BVCode>
+                </ChildContent>
+            </BVTab>
         </BVTabGroup>
 
         <BVText>Toggling an alert can be done via calling the <span class="documentation-text--primary">Show/Hide</span> methods on the instance. Assign a reference to your alert component and simple call the instance methods.</BVText>
@@ -89,6 +91,20 @@
                     @* TODO: use component instead *@
                     <button @onclick="() => Alert1.Show()">Show</button>
                     <button @onclick="() => Alert1.Dismiss()">Dismiss</button>
+                </ChildContent>
+            </BVTab>
+            <BVTab>
+                <Trigger>Code</Trigger>
+                <ChildContent>
+                    <BVCode>&lt;BVAlert Dismissible @@ref=&quot;Alert1&quot; Debug&gt;This alert can be toggled by the buttons below.&lt;/BVAlert&gt;
+&lt;button @@onclick=&quot;() =&gt; Alert1.Show()&quot;&gt;Show&lt;/button&gt;
+&lt;button @@onclick=&quot;() =&gt; Alert1.Dismiss()&quot;&gt;Dismiss&lt;/button&gt;
+                    
+@@code {
+    ...
+    BVAlert Alert1 { get; set; }
+    ...
+}</BVCode>
                 </ChildContent>
             </BVTab>
         </BVTabGroup>
