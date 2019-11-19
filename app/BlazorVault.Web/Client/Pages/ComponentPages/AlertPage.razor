@@ -1,33 +1,121 @@
 ﻿@page "/components/alert"
-<ComponentPage Title="Alerts">
+<ComponentPage Title="Alert" Type="typeof(BVAlert)">
     <Description>
         <BVText>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</BVText>
     </Description>
-    <Parameters>
-        Dismissible
-    </Parameters>
     <Functionality>
         Dismissing
     </Functionality>
     <Examples>
         <BVText>Alerts can contain text and can be styled with one of the style classes (e.g., <span class="text-danger">.alert-success</span>).</BVText>
-        <BVAlert>A simple primary alert - check it out!</BVAlert>
-        <BVAlert Style="Style.Secondary">A simple primary alert - check it out!</BVAlert>
-        <BVAlert Style="Style.Success">A simple primary alert - check it out!</BVAlert>
-        <BVAlert Style="Style.Danger">A simple primary alert - check it out!</BVAlert>
-        <BVAlert Style="Style.Warning">A simple primary alert - check it out!</BVAlert>
-        <BVAlert Style="Style.Info">A simple primary alert - check it out!</BVAlert>
-        <BVAlert Style="Style.Light">A simple primary alert - check it out!</BVAlert>
-        <BVAlert Style="Style.Dark">A simple primary alert - check it out!</BVAlert>
-        <BVCode>
-            &lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-            &lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-            &lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-            &lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-            &lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-            &lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-            &lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-            &lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-        </BVCode>
+        <BVTabGroup>
+            <BVTab>
+                <Trigger>Result</Trigger>
+                <ChildContent>
+                    <BVAlert>A simple primary alert - check it out!</BVAlert>
+                    <BVAlert Style="Style.Secondary">A simple secondary alert - check it out!</BVAlert>
+                    <BVAlert Style="Style.Success">A simple success alert - check it out!</BVAlert>
+                    <BVAlert Style="Style.Danger">A simple danger alert - check it out!</BVAlert>
+                    <BVAlert Style="Style.Warning">A simple warning alert - check it out!</BVAlert>
+                    <BVAlert Style="Style.Info">A simple info alert - check it out!</BVAlert>
+                    <BVAlert Style="Style.Light">A simple light alert - check it out!</BVAlert>
+                    <BVAlert Style="Style.Dark">A simple dark alert - check it out!</BVAlert>
+                </ChildContent>
+            </BVTab>
+            <BVTab>
+                <Trigger>Code</Trigger>
+                <ChildContent>
+                    <BVCode>
+                        &lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
+                        &lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple secondary alert - check it out!&lt;/BVAlert&gt;
+                        &lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple success alert - check it out!&lt;/BVAlert&gt;
+                        &lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple danger alert - check it out!&lt;/BVAlert&gt;
+                        &lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple warning alert - check it out!&lt;/BVAlert&gt;
+                        &lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple info alert - check it out!&lt;/BVAlert&gt;
+                        &lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple light alert - check it out!&lt;/BVAlert&gt;
+                        &lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple dark alert - check it out!&lt;/BVAlert&gt;
+                    </BVCode>
+                </ChildContent>
+            </BVTab>
+        </BVTabGroup>
+        <BVText>Alerts can also contain additional HTML elements like headings, paragraphs and dividers.</BVText>
+        <BVTabGroup>
+            <BVTab>
+                <Trigger>Result</Trigger>
+                <ChildContent>
+                    <BVAlert Style="Style.Secondary">
+                        <BVHeading Level="4">Random Heading</BVHeading>
+                        <BVText Lorem="20" />
+                        <hr />
+                        <BVText Lorem="5" />
+                    </BVAlert>
+                </ChildContent>
+            </BVTab>
+            <BVTab>
+                <Trigger>Code</Trigger>
+                <ChildContent>
+                    <BVCode>
+                        &lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;
+                        &lt;BVHeading Level=&quot;4&quot;&gt;Random Heading&lt;/BVHeading&gt;
+                        &lt;BVText Lorem=&quot;20&quot; /&gt;
+                        &lt;hr /&gt;
+                        &lt;BVText Lorem=&quot;5&quot; /&gt;
+                        &lt;/BVAlert&gt;
+                    </BVCode>
+                </ChildContent>
+            </BVTab>
+        </BVTabGroup>
+        <BVText>Enable dismiss functionality by setting the <span class="documentation-text--primary">@nameof(BVAlert.Dismissible)</span> parameter to true. An internal animation state machine will await for a specific interval (defined in Bootstrap library) untill it compleatly hides the element from the DOM.</BVText>
+        <BVTabGroup>
+            <BVTab>
+                <Trigger>Result</Trigger>
+                <ChildContent>
+                    <BVAlert Dismissible OnAnimatioStateChange="Alert0_OnAnimationStateChange" @ref="Alert0">This alert can be dismissed by clicking the X at the end.</BVAlert>
+                    @if (Alert0_ResetButton)
+                    {
+                        @* TODO: use component instead *@
+                        <button @onclick="Alert0_Reset">Reset</button>
+                    }
+                </ChildContent>
+            </BVTab>
+        </BVTabGroup>
+
+        <BVText>Toggling an alert can be done via calling the <span class="documentation-text--primary">Show/Hide</span> methods on the instance. Assign a reference to your alert component and simple call the instance methods.</BVText>
+        <BVTabGroup>
+            <BVTab>
+                <Trigger>Result</Trigger>
+                <ChildContent>
+                    <BVAlert Dismissible @ref="Alert1" Debug>This alert can be toggled by the buttons below.</BVAlert>
+                    @* TODO: use component instead *@
+                    <button @onclick="() => Alert1.Show()">Show</button>
+                    <button @onclick="() => Alert1.Dismiss()">Dismiss</button>
+                </ChildContent>
+            </BVTab>
+        </BVTabGroup>
     </Examples>
 </ComponentPage>
+@code {
+    #region Dismissable Alert Example
+    BVAlert Alert0 { get; set; }
+    bool Alert0_ResetButton { get; set; }
+    void Alert0_OnAnimationStateChange(AnimationState animationState)
+    {
+        if (animationState == AnimationState.EnterEnd)
+        {
+            Alert0_ResetButton = true;
+        }
+        else if (animationState == AnimationState.Idle)
+        {
+            Alert0_ResetButton = false;
+        }
+    }
+    void Alert0_Reset()
+    {
+        Alert0.Show();
+    }
+    #endregion
+
+    #region Toggle Alert Example
+    BVAlert Alert1 { get; set; }
+    #endregion
+}
