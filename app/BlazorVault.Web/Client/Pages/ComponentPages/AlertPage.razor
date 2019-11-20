@@ -4,101 +4,78 @@
         <BVText>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</BVText>
     </Description>
     <Examples>
-        <BVText>Alerts can contain text and can be styled with one of the style classes (e.g., <span class="text-danger">.alert-success</span>).</BVText>
-        <div class="documentation-example">
-            <BVButton @onclick="() => ShowStyledExamples = !ShowStyledExamples" Href="javascript: void(0);">Show More</BVButton>
-            <BVTabGroup>
-                <BVTab>
-                    <Trigger>Result</Trigger>
-                    <ChildContent>
-                        <BVAlert Style="Style.Secondary">A simple secondary alert - check it out!</BVAlert>
-                        <BVCollapsable Collapsed="!ShowStyledExamples">
-                            <BVAlert>A simple primary alert - check it out!</BVAlert>
-                            <BVAlert Style="Style.Success">A simple success alert - check it out!</BVAlert>
-                            <BVAlert Style="Style.Danger">A simple danger alert - check it out!</BVAlert>
-                            <BVAlert Style="Style.Warning">A simple warning alert - check it out!</BVAlert>
-                            <BVAlert Style="Style.Info">A simple info alert - check it out!</BVAlert>
-                            <BVAlert Style="Style.Light">A simple light alert - check it out!</BVAlert>
-                            <BVAlert Style="Style.Dark">A simple dark alert - check it out!</BVAlert>
-                        </BVCollapsable>
-                    </ChildContent>
-                </BVTab>
-                <BVTab>
-                    <Trigger>Code</Trigger>
-                    <ChildContent>
-                        <BVCode>&lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-    &lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple secondary alert - check it out!&lt;/BVAlert&gt;
-    &lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple success alert - check it out!&lt;/BVAlert&gt;
-    &lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple danger alert - check it out!&lt;/BVAlert&gt;
-    &lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple warning alert - check it out!&lt;/BVAlert&gt;
-    &lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple info alert - check it out!&lt;/BVAlert&gt;
-    &lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple light alert - check it out!&lt;/BVAlert&gt;
-    &lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple dark alert - check it out!&lt;/BVAlert&gt;</BVCode>
-                    </ChildContent>
-                </BVTab>
-            </BVTabGroup>
-        </div>
-        <BVText>Alerts can also contain additional HTML elements like headings, paragraphs and dividers.</BVText>
-        <BVTabGroup>
-            <BVTab>
-                <Trigger>Result</Trigger>
-                <ChildContent>
-                    <BVAlert Style="Style.Secondary">
-                        <BVHeading Level="4">Random Heading</BVHeading>
-                        <BVText Lorem="20" />
-                        <hr />
-                        <BVText Lorem="5" />
-                    </BVAlert>
-                </ChildContent>
-            </BVTab>
-            <BVTab>
-                <Trigger>Code</Trigger>
-                <ChildContent>
-                    <BVCode>&lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;
+        <BVText>Alerts are available for any length of text, as well as an optional dismiss button.</BVText>
+        <ExampleSection Heading="Styling">
+            <Description>
+                <BVText>Alerts can contain text and can be styled with one of the style classes (e.g., <span class="text-danger">.alert-secondary</span>).</BVText>
+            </Description>
+            <ChildContent>
+                <BVAlert Style="Style.Secondary">A simple secondary alert - check it out!</BVAlert>
+            </ChildContent>
+            <HiddenContent>
+                <BVAlert>A simple primary alert - check it out!</BVAlert>
+                <BVAlert Style="Style.Success">A simple success alert - check it out!</BVAlert>
+                <BVAlert Style="Style.Danger">A simple danger alert - check it out!</BVAlert>
+                <BVAlert Style="Style.Warning">A simple warning alert - check it out!</BVAlert>
+                <BVAlert Style="Style.Info">A simple info alert - check it out!</BVAlert>
+                <BVAlert Style="Style.Light">A simple light alert - check it out!</BVAlert>
+                <BVAlert Style="Style.Dark">A simple dark alert - check it out!</BVAlert>
+            </HiddenContent>
+            @* TODO: use code loading instead *@
+            <Code>&lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple secondary alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple success alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple danger alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple warning alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple info alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple light alert - check it out!&lt;/BVAlert&gt;
+&lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple dark alert - check it out!&lt;/BVAlert&gt;</Code>
+        </ExampleSection>
+        <ExampleSection Heading="Markup">
+            <Description>
+                <BVText>Alerts can also contain additional HTML elements like headings, paragraphs and dividers.</BVText>
+            </Description>
+            <ChildContent>
+                <BVAlert Style="Style.Secondary">
+                    <BVHeading Level="4">Random Heading</BVHeading>
+                    <BVText Lorem="20" />
+                    <hr />
+                    <BVText Lorem="5" />
+                </BVAlert>
+            </ChildContent>
+            @* TODO: use code loading instead *@
+            <Code>&lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;
 &lt;BVHeading Level=&quot;4&quot;&gt;Random Heading&lt;/BVHeading&gt;
 &lt;BVText Lorem=&quot;20&quot; /&gt;
 &lt;hr /&gt;
 &lt;BVText Lorem=&quot;5&quot; /&gt;
-&lt;/BVAlert&gt;</BVCode>
-                </ChildContent>
-            </BVTab>
-        </BVTabGroup>
-        <BVText>Enable dismiss functionality by setting the <span class="documentation-text--primary">@nameof(BVAlert.Dismissible)</span> parameter to true. An internal animation state machine will await for a specific interval (defined in Bootstrap library) untill it compleatly hides the element from the DOM.</BVText>
-        <BVTabGroup>
-            <BVTab>
-                <Trigger>Result</Trigger>
-                <ChildContent>
-                    <BVAlert Dismissible OnAnimatioStateChange="Alert0_OnAnimationStateChange" @ref="Alert0" Style="Style.Secondary">This alert can be dismissed by clicking the X at the end.</BVAlert>
-                    @if (Alert0_ResetButton)
-                    {
-                        @* TODO: use component instead *@
-                        <button @onclick="Alert0_Reset">Reset</button>
-                    }
-                </ChildContent>
-            </BVTab>
-            <BVTab>
-                <Trigger>Code</Trigger>
-                <ChildContent>
-                    <BVCode>&lt;BVAlert Dismissible&gt;This alert can be dismissed by clicking the X at the end.&lt;/BVAlert&gt;</BVCode>
-                </ChildContent>
-            </BVTab>
-        </BVTabGroup>
-
-        <BVText>Toggling an alert can be done via calling the <span class="documentation-text--primary">Show/Hide</span> methods on the instance. Assign a reference to your alert component and simple call the instance methods.</BVText>
-        <BVTabGroup>
-            <BVTab>
-                <Trigger>Result</Trigger>
-                <ChildContent>
-                    <BVAlert Dismissible @ref="Alert1" Style="Style.Secondary">This alert can be toggled by the buttons below.</BVAlert>
+&lt;/BVAlert&gt;</Code>
+        </ExampleSection>
+        <ExampleSection Heading="Dismiss Button">
+            <Description>
+                <BVText>Enable dismiss functionality by setting the <span class="documentation-text--primary">@nameof(BVAlert.Dismissible)</span> parameter to true. An internal animation state machine will await for a specific interval (defined in Bootstrap library) untill it compleatly hides the element from the DOM.</BVText>
+            </Description>
+            <ChildContent>
+                <BVAlert Dismissible OnAnimatioStateChange="Alert0_OnAnimationStateChange" @ref="Alert0" Style="Style.Secondary">This alert can be dismissed by clicking the X at the end.</BVAlert>
+                @if (Alert0_ResetButton)
+                {
                     @* TODO: use component instead *@
-                    <button @onclick="() => Alert1.Show()">Show</button>
-                    <button @onclick="() => Alert1.Dismiss()">Dismiss</button>
-                </ChildContent>
-            </BVTab>
-            <BVTab>
-                <Trigger>Code</Trigger>
-                <ChildContent>
-                    <BVCode>&lt;BVAlert Dismissible @@ref=&quot;Alert1&quot; Debug&gt;This alert can be toggled by the buttons below.&lt;/BVAlert&gt;
+                    <button @onclick="Alert0_Reset">Reset</button>
+                }
+            </ChildContent>
+            <Code>&lt;BVAlert Dismissible&gt;This alert can be dismissed by clicking the X at the end.&lt;/BVAlert&gt;</Code>
+        </ExampleSection>
+        <ExampleSection Heading="Dismiss Programmability">
+            <Description>
+                <BVText>Toggling an alert can be done via calling the <span class="documentation-text--primary">Show/Hide</span> methods on the instance. Assign a reference to your alert component and simple call the instance methods.</BVText>
+            </Description>
+            <ChildContent>
+                <BVAlert Dismissible @ref="Alert1" Style="Style.Secondary">This alert can be toggled by the buttons below.</BVAlert>
+                @* TODO: use component instead *@
+                <button @onclick="() => Alert1.Show()">Show</button>
+                <button @onclick="() => Alert1.Dismiss()">Dismiss</button>
+            </ChildContent>
+            <Code>&lt;BVAlert Dismissible @@ref=&quot;Alert1&quot; Debug&gt;This alert can be toggled by the buttons below.&lt;/BVAlert&gt;
 &lt;button @@onclick=&quot;() =&gt; Alert1.Show()&quot;&gt;Show&lt;/button&gt;
 &lt;button @@onclick=&quot;() =&gt; Alert1.Dismiss()&quot;&gt;Dismiss&lt;/button&gt;
                     
@@ -106,10 +83,8 @@
     ...
     BVAlert Alert1 { get; set; }
     ...
-}</BVCode>
-                </ChildContent>
-            </BVTab>
-        </BVTabGroup>
+}</Code>
+        </ExampleSection>
     </Examples>
 </ComponentPage>
 @code {
