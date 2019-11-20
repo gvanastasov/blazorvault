@@ -6,7 +6,7 @@
     <PackageId>BlazorVault</PackageId>
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.1-alpha</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A collection of reusable Blazor based components.</Description>
     <PackageProjectUrl>www.blazorvault.com</PackageProjectUrl>
@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/gvanastasov/blazorvault</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <PackageTags>blazor</PackageTags>
-    <PackageReleaseNotes>Alpha release of the package with some known bugs and missing functionality.</PackageReleaseNotes>
+    <PackageReleaseNotes>Introducing basic animation and updated Alert component.</PackageReleaseNotes>
     <Copyright>MIT License</Copyright>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Georgi Anastasov</Authors>
