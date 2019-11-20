@@ -11,11 +11,11 @@ namespace BlazorVault
 		private Style? _style;
 
 		/// <summary>
-		/// TODO: write description.
+		/// Defines the styling option class.
 		/// </summary>
 		[Display(
 			Name = nameof(Style),
-			Description = "How to style the thing.",
+			Description = "Defines the styling option class.",
 			Order = 10)]
 		[Parameter]
 		public virtual Style? Style
