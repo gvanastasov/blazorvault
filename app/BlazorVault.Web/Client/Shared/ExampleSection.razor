@@ -1,0 +1,57 @@
+﻿<section class="documentation-example mb-3">
+    <BVHeading Level="3" As="6">@Heading</BVHeading>
+    @Description
+    <div class="documentation-example__body">
+        @if (Collapsible)
+        {
+            <BVButton @onclick="() => ShowHiddenContent = !ShowHiddenContent" Href="javascript: void(0);">Show More</BVButton>
+        }
+        <BVTabGroup>
+            <BVTab>
+                <Trigger>Result</Trigger>
+                <ChildContent>
+                    @ChildContent
+                    @if (Collapsible)
+                    {
+                        <BVCollapsable Collapsed="!ShowHiddenContent">
+                            @HiddenContent
+                        </BVCollapsable>
+                    }
+                </ChildContent>
+            </BVTab>
+            <BVTab>
+                <Trigger>Code</Trigger>
+                <ChildContent>
+                    <BVCode>@Code</BVCode>
+                </ChildContent>
+            </BVTab>
+        </BVTabGroup>
+    </div>
+</section>
+
+@code {
+    [Parameter]
+    public string Heading { get; set; }
+
+    [Parameter]
+    public RenderFragment Description { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment Code { get; set; }
+
+    [Parameter]
+    public RenderFragment HiddenContent { get; set; }
+
+    public bool ShowHiddenContent { get; set; }
+
+    private bool Collapsible
+    {
+        get
+        {
+            return this.HiddenContent != null;
+        }
+    }
+}

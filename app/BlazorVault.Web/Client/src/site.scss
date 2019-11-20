@@ -137,6 +137,7 @@ body {
 .documentation-table {
     width: 100%;
     table-layout: fixed;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 
     & th, & td {
         padding: .75rem;
@@ -154,12 +155,32 @@ body {
 }
 
 .documentation-example {
-    position: relative;
 
-    & > .btn {
-        position: absolute;
-        top: 0;
-        right: 0;
+    & > h3 {
+        text-transform: lowercase;
+
+        &:before {
+            width: 10px;
+            height: 10px;
+            background-color: $color-primary;
+            content: '';
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+
+    &__body {
+        position: relative;
+    
+        & > .btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    
+        & .tab-content {
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+        } 
     }
 }
 

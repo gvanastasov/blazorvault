@@ -296,7 +296,8 @@ body {
 /* todo: move out of here */
 .documentation-table {
   width: 100%;
-  table-layout: fixed; }
+  table-layout: fixed;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
   .documentation-table th, .documentation-table td {
     padding: .75rem;
     vertical-align: top;
@@ -307,12 +308,24 @@ body {
   background-color: #dc3545;
   border-color: #990011FF; }
 
-.documentation-example {
+.documentation-example > h3 {
+  text-transform: lowercase; }
+  .documentation-example > h3:before {
+    width: 10px;
+    height: 10px;
+    background-color: #990011FF;
+    content: '';
+    display: inline-block;
+    margin-right: 10px; }
+
+.documentation-example__body {
   position: relative; }
-  .documentation-example > .btn {
+  .documentation-example__body > .btn {
     position: absolute;
     top: 0;
     right: 0; }
+  .documentation-example__body .tab-content {
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); }
 
 .landing-page {
   align-items: center;
