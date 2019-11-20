@@ -307,6 +307,13 @@ body {
   background-color: #dc3545;
   border-color: #990011FF; }
 
+.documentation-example {
+  position: relative; }
+  .documentation-example > .btn {
+    position: absolute;
+    top: 0;
+    right: 0; }
+
 .landing-page {
   align-items: center;
   display: flex;

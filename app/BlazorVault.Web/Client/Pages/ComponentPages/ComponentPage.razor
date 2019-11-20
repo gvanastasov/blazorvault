@@ -14,7 +14,7 @@
 <BVHeading Large class="text-right">@Title</BVHeading>
 @Description
 <hr>
-@if (Parameterss != null)
+@if (Parameters != null)
 {
     <ComponentSection Title="Parameters">
         <table class="table documentation-table">
@@ -26,7 +26,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Parameterss)
+                @foreach (var item in Parameters)
                 {
                     <tr>
                         <td class="documentation-text--primary">@item.Name</td>
@@ -80,9 +80,6 @@
     public RenderFragment Description { get; set; }
 
     [Parameter]
-    public RenderFragment Parameters { get; set; }
-
-    [Parameter]
     public RenderFragment Functionality { get; set; }
 
     [Parameter]
@@ -91,7 +88,7 @@
     [Parameter]
     public Type Type { get; set; }
 
-    private List<ComponentParameterViewModel> Parameterss { get; set; }
+    private List<ComponentParameterViewModel> Parameters { get; set; }
 
     private List<ComponentFunctionViewModel> Methods { get; set; }
 
@@ -99,7 +96,7 @@
     {
         if (this.Type != null)
         {
-            this.Parameterss = DisplayHelper
+            this.Parameters = DisplayHelper
                 .GetDisplayAttributeData<PropertyInfo, ComponentParameterViewModel>(
                     this.Type.GetProperties(),
                     (member, x) => {

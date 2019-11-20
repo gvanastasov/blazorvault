@@ -153,6 +153,16 @@ body {
     }
 }
 
+.documentation-example {
+    position: relative;
+
+    & > .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
 .landing-page {
     align-items: center;
     display: flex;

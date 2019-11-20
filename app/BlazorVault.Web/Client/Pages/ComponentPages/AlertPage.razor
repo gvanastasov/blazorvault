@@ -3,39 +3,41 @@
     <Description>
         <BVText>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</BVText>
     </Description>
-    <Functionality>
-        Dismissing
-    </Functionality>
     <Examples>
         <BVText>Alerts can contain text and can be styled with one of the style classes (e.g., <span class="text-danger">.alert-success</span>).</BVText>
-        <BVTabGroup>
-            <BVTab>
-                <Trigger>Result</Trigger>
-                <ChildContent>
-                    <BVAlert>A simple primary alert - check it out!</BVAlert>
-                    <BVAlert Style="Style.Secondary">A simple secondary alert - check it out!</BVAlert>
-                    <BVAlert Style="Style.Success">A simple success alert - check it out!</BVAlert>
-                    <BVAlert Style="Style.Danger">A simple danger alert - check it out!</BVAlert>
-                    <BVAlert Style="Style.Warning">A simple warning alert - check it out!</BVAlert>
-                    <BVAlert Style="Style.Info">A simple info alert - check it out!</BVAlert>
-                    <BVAlert Style="Style.Light">A simple light alert - check it out!</BVAlert>
-                    <BVAlert Style="Style.Dark">A simple dark alert - check it out!</BVAlert>
-                </ChildContent>
-            </BVTab>
-            <BVTab>
-                <Trigger>Code</Trigger>
-                <ChildContent>
-                    <BVCode>&lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
-&lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple secondary alert - check it out!&lt;/BVAlert&gt;
-&lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple success alert - check it out!&lt;/BVAlert&gt;
-&lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple danger alert - check it out!&lt;/BVAlert&gt;
-&lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple warning alert - check it out!&lt;/BVAlert&gt;
-&lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple info alert - check it out!&lt;/BVAlert&gt;
-&lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple light alert - check it out!&lt;/BVAlert&gt;
-&lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple dark alert - check it out!&lt;/BVAlert&gt;</BVCode>
-                </ChildContent>
-            </BVTab>
-        </BVTabGroup>
+        <div class="documentation-example">
+            <BVButton @onclick="() => ShowStyledExamples = !ShowStyledExamples" Href="javascript: void(0);">Show More</BVButton>
+            <BVTabGroup>
+                <BVTab>
+                    <Trigger>Result</Trigger>
+                    <ChildContent>
+                        <BVAlert Style="Style.Secondary">A simple secondary alert - check it out!</BVAlert>
+                        <BVCollapsable Collapsed="!ShowStyledExamples">
+                            <BVAlert>A simple primary alert - check it out!</BVAlert>
+                            <BVAlert Style="Style.Success">A simple success alert - check it out!</BVAlert>
+                            <BVAlert Style="Style.Danger">A simple danger alert - check it out!</BVAlert>
+                            <BVAlert Style="Style.Warning">A simple warning alert - check it out!</BVAlert>
+                            <BVAlert Style="Style.Info">A simple info alert - check it out!</BVAlert>
+                            <BVAlert Style="Style.Light">A simple light alert - check it out!</BVAlert>
+                            <BVAlert Style="Style.Dark">A simple dark alert - check it out!</BVAlert>
+                        </BVCollapsable>
+                    </ChildContent>
+                </BVTab>
+                <BVTab>
+                    <Trigger>Code</Trigger>
+                    <ChildContent>
+                        <BVCode>&lt;BVAlert&gt;A simple primary alert - check it out!&lt;/BVAlert&gt;
+    &lt;BVAlert Style=&quot;Style.Secondary&quot;&gt;A simple secondary alert - check it out!&lt;/BVAlert&gt;
+    &lt;BVAlert Style=&quot;Style.Success&quot;&gt;A simple success alert - check it out!&lt;/BVAlert&gt;
+    &lt;BVAlert Style=&quot;Style.Danger&quot;&gt;A simple danger alert - check it out!&lt;/BVAlert&gt;
+    &lt;BVAlert Style=&quot;Style.Warning&quot;&gt;A simple warning alert - check it out!&lt;/BVAlert&gt;
+    &lt;BVAlert Style=&quot;Style.Info&quot;&gt;A simple info alert - check it out!&lt;/BVAlert&gt;
+    &lt;BVAlert Style=&quot;Style.Light&quot;&gt;A simple light alert - check it out!&lt;/BVAlert&gt;
+    &lt;BVAlert Style=&quot;Style.Dark&quot;&gt;A simple dark alert - check it out!&lt;/BVAlert&gt;</BVCode>
+                    </ChildContent>
+                </BVTab>
+            </BVTabGroup>
+        </div>
         <BVText>Alerts can also contain additional HTML elements like headings, paragraphs and dividers.</BVText>
         <BVTabGroup>
             <BVTab>
@@ -111,6 +113,9 @@
     </Examples>
 </ComponentPage>
 @code {
+    #region
+    bool ShowStyledExamples { get; set; }
+    #endregion
     #region Dismissable Alert Example
     BVAlert Alert0 { get; set; }
     bool Alert0_ResetButton { get; set; }
