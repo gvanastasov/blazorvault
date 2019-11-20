@@ -43,6 +43,14 @@ namespace BlazorVault
 			}
 		}
 
+		protected override string VariantClass
+		{
+			get
+			{
+				return IsLink ? "btn-link" : base.VariantClass;
+			}
+		}
+
 		[Parameter]
 		public ButtonType Type { get; set; } = ButtonType.Button;
 
