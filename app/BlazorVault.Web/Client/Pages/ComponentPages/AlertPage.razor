@@ -68,7 +68,7 @@
             <BVTab>
                 <Trigger>Result</Trigger>
                 <ChildContent>
-                    <BVAlert Dismissible OnAnimatioStateChange="Alert0_OnAnimationStateChange" @ref="Alert0">This alert can be dismissed by clicking the X at the end.</BVAlert>
+                    <BVAlert Dismissible OnAnimatioStateChange="Alert0_OnAnimationStateChange" @ref="Alert0" Style="Style.Secondary">This alert can be dismissed by clicking the X at the end.</BVAlert>
                     @if (Alert0_ResetButton)
                     {
                         @* TODO: use component instead *@
@@ -89,7 +89,7 @@
             <BVTab>
                 <Trigger>Result</Trigger>
                 <ChildContent>
-                    <BVAlert Dismissible @ref="Alert1" Debug>This alert can be toggled by the buttons below.</BVAlert>
+                    <BVAlert Dismissible @ref="Alert1" Style="Style.Secondary">This alert can be toggled by the buttons below.</BVAlert>
                     @* TODO: use component instead *@
                     <button @onclick="() => Alert1.Show()">Show</button>
                     <button @onclick="() => Alert1.Dismiss()">Dismiss</button>
