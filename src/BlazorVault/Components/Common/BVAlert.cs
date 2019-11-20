@@ -133,6 +133,9 @@ namespace BlazorVault
 			Task.Run(() => DismissAsync());
 		}
 
+		[Display(
+			Name = nameof(Show),
+			Description = "Shows the alert box after animation time ends.")]
 		public void Show()
 		{
 			if (Debug)

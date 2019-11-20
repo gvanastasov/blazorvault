@@ -135,10 +135,21 @@ body {
 
 /* todo: move out of here */
 .documentation-table {
+    width: 100%;
+    table-layout: fixed;
+
     & th, & td {
         padding: .75rem;
         vertical-align: top;
         border: 1px solid #dee2e6;
+    }
+}
+
+.documentation-alert {
+    &--warning {
+        color: $color-white;
+        background-color: $color-light;
+        border-color: $color-primary;
     }
 }
 

@@ -294,10 +294,18 @@ body {
         font-size: 1.75rem; } }
 
 /* todo: move out of here */
-.documentation-table th, .documentation-table td {
-  padding: .75rem;
-  vertical-align: top;
-  border: 1px solid #dee2e6; }
+.documentation-table {
+  width: 100%;
+  table-layout: fixed; }
+  .documentation-table th, .documentation-table td {
+    padding: .75rem;
+    vertical-align: top;
+    border: 1px solid #dee2e6; }
+
+.documentation-alert--warning {
+  color: #fcf6f5ff;
+  background-color: #dc3545;
+  border-color: #990011FF; }
 
 .landing-page {
   align-items: center;

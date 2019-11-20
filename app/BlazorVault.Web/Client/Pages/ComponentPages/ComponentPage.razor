@@ -1,33 +1,65 @@
-﻿@using System.ComponentModel.DataAnnotations;
+﻿@using System.ComponentModel.DataAnnotations
+@using BlazorVault.Web.Client.ViewModels
+@using BlazorVault.Web.Client.Helpers
+@using System.Reflection
+
+@if (UnderDevelopment)
+{
+    <BVAlert Style="Style.Warning" class="documentation-alert--warning">
+        <BVHeading Level="4"><span class="oi oi-warning" title="warning" aria-hidden="true"></span> Under Development</BVHeading>
+        <div class="component-under-dev">This component is under construction so please be patient until it's finished. You are, of course, always welcome to join me and speed up the process, so we get rid of this sad banner.</div>
+    </BVAlert>
+}
+
 <BVHeading Large class="text-right">@Title</BVHeading>
 @Description
 <hr>
 @if (Parameterss != null)
 {
     <ComponentSection Title="Parameters">
-        <table class="documentation-table">
+        <table class="table documentation-table">
             <thead>
                 <tr>
-                    <th>@nameof(DisplayAttribute.Name)</th>
-                    <th>@nameof(DisplayAttribute.Description)</th>
+                    <th class="w-25">@nameof(ComponentMemberViewModel.Name)</th>
+                    <th class="w-25">@nameof(System.Type)</th>
+                    <th>@nameof(ComponentMemberViewModel.Description)</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Parameterss)
                 {
                     <tr>
-                        <td class="documentation-text--primary">@item.Key</td>
-                        <td>@item.Value</td>
+                        <td class="documentation-text--primary">@item.Name</td>
+                        <td>@item.Type</td>
+                        <td>@item.Description</td>
                     </tr>
                 }
             </tbody>
         </table>
     </ComponentSection>
 }
-@if (Functionality != null)
+@if (Methods != null)
 {
     <ComponentSection Title="Functionality">
-        @Functionality
+        <table class="table documentation-table">
+            <thead>
+                <tr>
+                    <th class="w-25">@nameof(ComponentMemberViewModel.Name)</th>
+                    <th class="w-25">@nameof(MethodInfo.ReturnType)</th>
+                    <th>@nameof(ComponentMemberViewModel.Description)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Methods)
+                {
+                    <tr>
+                        <td class="documentation-text--primary">@item.Name</td>
+                        <td>@item.ReturnType</td>
+                        <td>@item.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </ComponentSection>
 }
 @if (Examples != null)
@@ -36,7 +68,11 @@
         @Examples
     </ComponentSection>
 }
+
 @code {
+    [Parameter]
+    public bool UnderDevelopment { get; set; }
+
     [Parameter]
     public string Title { get; set; }
 
@@ -55,26 +91,45 @@
     [Parameter]
     public Type Type { get; set; }
 
-    private Dictionary<string, string> Parameterss { get; set; }
+    private List<ComponentParameterViewModel> Parameterss { get; set; }
+
+    private List<ComponentFunctionViewModel> Methods { get; set; }
 
     protected override void OnParametersSet()
     {
         if (this.Type != null)
         {
-            this.Parameterss = new Dictionary<string, string>();
-            var properties = this.Type.GetProperties();
+            this.Parameterss = DisplayHelper
+                .GetDisplayAttributeData<PropertyInfo, ComponentParameterViewModel>(
+                    this.Type.GetProperties(),
+                    (member, x) => {
+                        var propertyType = member.PropertyType;
+                        var typeCode = Type.GetTypeCode(propertyType);
 
-            foreach (var prop in properties)
-            {
-                var display = prop
-                    .GetCustomAttributes(typeof(DisplayAttribute), true)
-                    .FirstOrDefault() as DisplayAttribute;
-
-                if (display != null)
-                {
-                    this.Parameterss.Add(display.Name, display.Description);
-                }
-            }
+                        if (typeCode == TypeCode.Object)
+                        {
+                            var nullable = Nullable.GetUnderlyingType(propertyType);
+                            if (nullable != null)
+                            {
+                                x.Type = $"Nullable<{nullable.Name}>";
+                            }
+                            else if (propertyType.IsGenericType)
+                            {
+                                x.Type = "Generic";
+                            }
+                        }
+                        else
+                        {
+                            x.Type = member.PropertyType.Name;
+                        }
+                    });
+            this.Methods = DisplayHelper
+                .GetDisplayAttributeData<MethodInfo, ComponentFunctionViewModel>(
+                    this.Type.GetMethods(),
+                    (member, x) =>
+                    {
+                        x.ReturnType = member.ReturnType.Name;
+                    });
         }
     }
 }
