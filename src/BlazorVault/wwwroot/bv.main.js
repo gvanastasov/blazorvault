@@ -1,5 +1,3 @@
-"use strict";
-
 const utils = {
     addClass: function (el, className) {
         if (className && el.classList) {
