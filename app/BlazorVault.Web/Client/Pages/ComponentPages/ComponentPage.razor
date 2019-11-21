@@ -12,7 +12,9 @@
 }
 
 <BVHeading Large class="text-right">@Title</BVHeading>
-@Description
+<div class="text-right">
+    @Description
+</div>
 <hr>
 @if (Parameters != null)
 {
@@ -68,7 +70,12 @@
         @Examples
     </ComponentSection>
 }
-
+@if (Tasks != null)
+{
+    <ComponentSection Title="Stories & Issues">
+        @Tasks
+    </ComponentSection>
+}
 @code {
     [Parameter]
     public bool UnderDevelopment { get; set; }
@@ -84,6 +91,9 @@
 
     [Parameter]
     public RenderFragment Examples { get; set; }
+
+    [Parameter]
+    public RenderFragment Tasks { get; set; }
 
     [Parameter]
     public Type Type { get; set; }
