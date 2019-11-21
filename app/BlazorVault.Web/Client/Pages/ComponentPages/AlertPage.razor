@@ -53,7 +53,7 @@
         </ExampleSection>
         <ExampleSection Heading="Dismiss Button">
             <Description>
-                <BVText>Enable dismiss functionality by setting the <span class="documentation-text--primary">@nameof(BVAlert.Dismissible)</span> parameter to true. An internal animation state machine will await for a specific interval (defined in Bootstrap library) untill it compleatly hides the element from the DOM.</BVText>
+                <BVText>Enable dismiss functionality by setting the <span class="documentation-text--primary">@nameof(BVAlert.Dismissible)</span> parameter to true. An internal animation state machine will await for a specific interval (defined in Bootstrap library) untill it compleatly hides the element from the DOM. In some occasions, you might want to have the dismiss button hidden (and use programmability to control the component state). Todo so, set the <span class="documentation-text--primary">@nameof(BVAlert.HideDismissButton)</span> parameter to true.</BVText>
             </Description>
             <ChildContent>
                 <BVAlert Dismissible OnAnimatioStateChange="Alert0_OnAnimationStateChange" @ref="Alert0" Style="Style.Secondary">This alert can be dismissed by clicking the X at the end.</BVAlert>
@@ -62,8 +62,10 @@
                     @* TODO: use component instead *@
                     <button @onclick="Alert0_Reset">Reset</button>
                 }
+                <BVAlert Dismissible HideDismissButton Style="Style.Secondary">This alert has its button hidden.</BVAlert>
             </ChildContent>
-            <Code>&lt;BVAlert Dismissible&gt;This alert can be dismissed by clicking the X at the end.&lt;/BVAlert&gt;</Code>
+            <Code>&lt;BVAlert Dismissible&gt;This alert can be dismissed by clicking the X at the end.&lt;/BVAlert&gt;
+ &lt;BVAlert Dismissible HideDismissButton Style=&quot;Style.Secondary&quot;&gt;This alert has its button hidden.&lt;/BVAlert&gt;</Code>
         </ExampleSection>
         <ExampleSection Heading="Dismiss Programmability">
             <Description>

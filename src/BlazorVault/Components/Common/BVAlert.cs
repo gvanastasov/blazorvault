@@ -29,6 +29,13 @@ namespace BlazorVault
 		[Parameter]
 		public bool Dismissible { get; set; }
 
+		[Display(
+			Name = nameof(HideDismissButton),
+			Description = "Hides the dismiss button.",
+			Order = 20)]
+		[Parameter]
+		public bool HideDismissButton { get; set; }
+
 		public bool Hidden { get; set; }
 
 		/// <summary>
@@ -193,7 +200,7 @@ namespace BlazorVault
 		{
 			base.RenderInnerHtml(builder, ref sequence);
 
-			if (this.Dismissible)
+			if (this.Dismissible && !this.HideDismissButton)
 			{
 				RenderDismissButton(builder, ref sequence);
 			}
